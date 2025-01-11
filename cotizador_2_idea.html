@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <base href="." />
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta por días</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        /* Estilos base */
+        .container_coti2 {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 50em;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-container h2 {
+            color: orange;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        button {
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-right: 10px;
+            transition: background 0.3s;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        /* Botón naranja */
+        .btn-orange {
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+            border-radius: 10px;
+            background: orange;
+        }
+
+        .btn-orange:hover {
+            background: red;
+        }
+
+        /* Botón azul */
+        .btn-blue {
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+            border-radius: 10px;
+            background: orangered;
+            /* Naranja intenso */
+        }
+
+        .btn-blue:hover {
+            background: red;
+            /* Naranja más oscuro */
+        }
+
+        /* Botón verde */
+        .btn-green {
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+            border-radius: 10px;
+            background: red;
+            
+            /* Naranja madera */
+        }
+
+        .btn-green:hover {
+            background: white;
+            color: red;
+            /* Naranja dulce */
+        }
+
+        #results {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            overflow-x: auto;
+            /* Permite desplazamiento horizontal */
+        }
+
+        .results-table {
+            font-size: 12px;
+            background-color: rgb(235, 235, 235);
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            table-layout: auto;
+            /* Ajusta las columnas automáticamente */
+        }
+
+        .results-table th,
+        .results-table td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+            word-wrap: break-word;
+            /* Rompe el texto si es muy largo */
+        }
+
+        .results-table th {
+            background: orange;
+            color: white;
+        }
+
+        .results-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .instruction-box {
+            background-color: #f5f5f5;
+            color: red;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: left;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .instruction-box ul {
+            list-style-type: disc;
+            padding: 2px;
+            padding-left: 15px;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        /* Responsive Design para tablets (768px o menos) */
+        @media (max-width: 768px) {
+            #results {
+                padding: 15px;
+                margin-top: 15px;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .instruction-box {
+                padding: 15px;
+                max-width: 90%;
+            }
+
+            .instruction-box ul {
+                font-size: 14px;
+            }
+
+            button {
+                font-size: 0.9rem;
+                width: 100%;
+                /* Botones ocupan todo el ancho */
+            }
+        }
+
+        /* Responsive Design para móviles (480px o menos) */
+        @media (max-width: 425px) {
+            .form-container {
+                width: 100%;
+                padding: 15px;
+            }
+
+            #results {
+                font-size: 8px;
+                padding: 0px;
+                margin-top: 10px;
+            }
+
+            .results-table th,
+            .results-table td {
+                padding: 2px;
+                font-size: 8px;
+            }
+
+            .instruction-box {
+                padding: 10px;
+                max-width: 95%;
+                margin: 10px auto;
+            }
+
+            .instruction-box ul {
+                font-size: 12px;
+            }
+
+            button {
+                font-size: 0.8rem;
+                width: 100%;
+                /* Botones ocupan todo el ancho */
+            }
+        }
+
+        .titulo_lindito {
+            width: 100%;
+            background-color: #f5f5f5;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .cabecera_OK {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .titulo_texto {
+            font-size: 31px;
+            color: orangered;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .logo_imagen {
+            height: 50px;
+            margin-left: auto;
+            display: block;
+        }
+
+        .footer img {
+            width: 90px;
+            height: 75px;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <div class="titulo_lindito">
+        <div class="cabecera_OK">
+            <div class="titulo_texto">Consulta</div>
+            <img src="assets/img/WMLogo.png" alt="WM Logo" class="logo_imagen">
+        </div>
+    </div>
+    <!-- Cuerpo html -->
+    <div id="cotizador">
+        <div class="container_coti2">
+
+            <br>
+            <div class="form-container">
+                <h2>Consultar y cotizar por días</h2>
+
+
+                <div class="form-group">
+                    <label for="days">Número de días:</label>
+                    <input type="number" id="days" min="" max="" required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="mileage">Tipo de Tarifa:</label>
+                    <select id="mileage">
+                        <option value="limited">Precio limitado (120 km/día)</option>
+                        <option value="unlimited">Precio libre de KM</option>
+                    </select>
+                </div>
+                <div style="text-align: center;">
+                    <button class="btn-orange" onclick="calculateQuotes()">Consultar autos</button><br><br>
+                    <button class="btn-blue" onclick="window.location.href='cotizador_2_idea.html'">Limpiar consulta</button>
+                </div>
+                <br>
+                <div class="instruction-box">
+                    <ul>
+                        <li>Introduzca la cantidad de días</li>
+                        <li>Máximo 730 días (2 años)</li>
+                        <li>Cotice su consulta</li>
+                        <li>Puede descargar su consulta (PDF)</li>
+                        <li>Puede descargar su consulta (JPG)</li>
+                    </ul>
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    <button class="btn-green" onclick="window.location.href='index.html'">Página inicial</button>
+                </div>
+
+
+                <div id="results">
+                    <br>
+                    <div style=" text-align: center; color: orangered;">
+                        <h1>Resultados</h1>
+                    </div>
+                    
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Auto</th>
+                                <th>Precio por Día</th>
+                                <th>Garantía</th>
+                                <th>Sub total</th>
+                                <th>Total (Con Garantía)</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody id="resultsBody"></tbody>
+                    </table>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Script Cotizador 2 -->
+        <script>
+            const cars = [{
+                    name: "Nissan Versa 2024",
+                    image: "assets/img/cars_result_img/nissan_versa_2024.jpg",
+                    passengers: 5,
+                    colors: ["Azul", "Blanco"],
+                    transmission: "Automático",
+                    motor: "1.6",
+                    fuel: "Nafta 97 Octanos",
+                    ac: "Sí",
+                    radio: "Sí",
+                    warranty: 1000000,
+                    limited: [380000, 340000, 330000, 265000, 250000, 250000, 250000, 250000, 250000, 250000, 250000],
+                    unlimited: [490000, 450000, 380000, 340000, 260000, 260000, 260000, 260000, 260000, 260000, 260000],
+                },
+                {
+                    name: "Kia Soluto Automático",
+                    image: "assets/img/cars_result_img/kia_soluto_automatico.jpeg",
+                    passengers: 5,
+                    colors: ["Negro", "Azul"],
+                    transmission: "Automático",
+                    motor: "1.4",
+                    fuel: "Nafta 97 Octanos",
+                    ac: "Sí",
+                    radio: "Sí",
+                    warranty: 1000000,
+                    limited: [340000, 300000, 270000, 230000, 220000, 220000, 220000, 220000, 220000, 220000, 220000],
+                    unlimited: [450000, 380000, 330000, 280000, 240000, 240000, 240000, 240000, 240000, 240000, 240000],
+                },
+                {
+                    name: "Kia Soluto Mecánico",
+                    image: "assets/img/cars_result_img/kia_soluto_automatico.jpeg",
+                    description: "Economía y control manual.",
+                    passengers: 5,
+                    colors: ["Blanco", "Gris"],
+                    transmission: "Mecánico",
+                    motor: "1.4",
+                    fuel: "Nafta 95 Octanos",
+                    ac: "Sí",
+                    radio: "Sí",
+                    warranty: 700000,
+                    limited: [270000, 250000, 220000, 200000, 190000, 190000, 190000, 190000, 190000, 190000, 190000],
+                    unlimited: [380000, 350000, 280000, 250000, 220000, 220000, 220000, 220000, 220000, 220000, 220000],
+
+                },
+                {
+                    name: "Toyota New Allion",
+                    image: "assets/img/cars_result_img/TOYOTA NEW ALLION.jpg",
+                    description: "Espacioso y cómodo, motor eficiente.",
+                    passengers: 5,
+                    colors: ["Blanco", "Perla"],
+                    transmission: "Automático",
+                    motor: "1.5",
+                    fuel: "Nafta 92-95 Octanos",
+                    ac: "Sí",
+                    radio: "Sí",
+                    warranty: 700000,
+                    limited: [260000, 250000, 225000, 200000, 180000, 180000, 180000, 180000, 180000, 180000, 180000],
+                    unlimited: [380000, 340000, 280000, 250000, 220000, 220000, 220000, 220000, 220000, 220000, 220000],
+
+                },
+                {
+                    name: "Chery Arrizo",
+                    image: "assets/img/cars_result_img/Chery_Arrizo.jpg",
+                    description: "Diseño elegante, rendimiento eficiente.",
+                    passengers: 5,
+                    colors: ["Blanco"],
+                    transmission: "Automático",
+                    motor: "1.5",
+                    fuel: "Nafta 92-95 Octanos",
+                    ac: "Sí",
+                    radio: "Sí",
+                    warranty: 700000,
+                    limited: [260000, 250000, 225000, 200000, 180000, 180000, 180000, 180000, 180000, 180000, 180000],
+                    unlimited: [380000, 340000, 280000, 250000, 220000, 220000, 220000, 220000, 220000, 220000, 220000],
+
+                },
+                {
+                    name: "Toyota New Vitz",
+                    image: "assets/img/cars_result_img/Toyota_New_Vitz.jpg",
+                    description: "Compacto y versátil, motor eficiente.",
+                    passengers: 4,
+                    colors: ["Gris", "Plata", "Rojo"],
+                    transmission: "Automático",
+                    motor: "1.3",
+                    fuel: "Nafta 92-95 Octanos",
+                    ac: "Sí",
+                    radio: "Sí",
+                    warranty: 500000,
+                    limited: [240000, 220000, 200000, 165000, 150000, 150000, 150000, 150000, 150000, 150000, 150000],
+                    unlimited: [350000, 300000, 240000, 200000, 190000, 190000, 190000, 190000, 190000, 190000, 190000],
+
+                },
+                {
+                    name: "SsangYong Tivoli",
+                    image: "assets/img/cars_result_img/SsangYong_Tivoli.jpg",
+                    passengers: 5,
+                    colors: ["Azul", "Plata"],
+                    description: "SUV moderno, amplio espacio interior.",
+                    transmission: "Automático",
+                    motor: "1.6",
+                    fuel: "Nafta 97 Octanos",
+                    ac: "Sí",
+                    radio: "Sí",
+                    warranty: 2000000,
+                    limited: [450000, 400000, 370000, 350000, 320000, 320000, 320000, 320000, 320000, 320000, 320000, ],
+                    unlimited: [550000, 500000, 450000, 400000, 350000, 350000, 350000, 350000, 350000, 350000, 350000],
+
+                },
+                {
+                    name: "VW T-Cross 2025",
+                    image: "assets/img/cars_result_img/VW_T_CROSS_2025.jpg",
+                    description: "SUV compacto, diseño deportivo.",
+                    passengers: 5,
+                    colors: ["Azul", "Blanco"],
+                    transmission: "Automático",
+                    motor: "1.0",
+                    fuel: "Nafta 97 Octanos",
+                    ac: "Sí",
+                    radio: "Sí",
+                    warranty: 1000000,
+                    limited: [400000, 380000, 350000, 310000, 280000, 280000, 280000, 280000, 280000, 280000, 280000],
+                    unlimited: [490000, 450000, 380000, 365000, 310000, 310000, 310000, 310000, 310000, 310000, 310000],
+
+                },
+                {
+                    name: "Nissan Kiks",
+                    image: "assets/img/cars_result_img/NISSAN_KIKS.jpg",
+                    description: "Confiabilidad Nissan, diseño robusto.",
+                    passengers: 5,
+                    colors: ["Gris"],
+                    transmission: "Automático",
+                    motor: "1.6",
+                    fuel: "Nafta 97 Octanos",
+                    ac: "Sí",
+                    radio: "Sí",
+                    warranty: 1000000,
+                    limited: [400000, 380000, 350000, 310000, 280000, 280000, 280000, 280000, 280000, 280000, 280000],
+                    unlimited: [490000, 450000, 380000, 365000, 310000, 310000, 310000, 310000, 310000, 310000, 310000],
+
+                },
+                {
+                    name: "Kia Sportage 2025",
+                    image: "assets/img/cars_result_img/KIA_SPORTAGE_2025.jpg",
+                    description: "Potente SUV, diseño dinámico.",
+                    passengers: 5,
+                    colors: ["Gris"],
+                    transmission: "Automático",
+                    motor: "2.0",
+                    fuel: "Nafta 97 Octanos",
+                    ac: "Sí",
+                    radio: "Sí",
+                    warranty: 2000000,
+                    limited: [750000, 730000, 680000, 600000, 480000, 480000, 480000, 480000, 480000, 480000, 480000],
+                    unlimited: [950000, 880000, 780000, 720000, 650000, 650000, 650000, 650000, 650000, 650000, 650000],
+
+                },
+                {
+                    name: "Nissan Frontier 2025",
+                    image: "assets/img/cars_result_img/NISSAN_FRONTIER_2025.jpg",
+                    description: "Camioneta robusta, gran capacidad.",
+                    passengers: 5,
+                    colors: ["Negro"],
+                    transmission: "Automático",
+                    motor: "2.5",
+                    fuel: "Diesel Podium",
+                    ac: "Sí",
+                    radio: "Sí",
+                    warranty: 7500000,
+                    limited: [1300000, 1100000, 1000000, 950000, 800000, 800000, 800000, 800000, 800000, 800000, 800000],
+                    unlimited: [1300000, 1100000, 1000000, 950000, 800000, 800000, 800000, 800000, 800000, 800000, 800000, ],
+
+                },
+                {
+                    name: "Mazda BT50",
+                    image: "assets/img/cars_result_img/MAZDA_BT50.jpg",
+                    description: "Estilo ideal, robusto y moderno.",
+                    passengers: 5,
+                    colors: ["Blanco"],
+                    transmission: "Automático",
+                    motor: "3.0",
+                    fuel: "Diesel Podium",
+                    ac: "Sí",
+                    radio: "Sí",
+                    warranty: 7500000,
+                    limited: [1300000, 1100000, 1000000, 950000, 800000, 800000, 800000, 800000, 800000, 800000, 800000, ],
+                    unlimited: [1300000, 1100000, 1000000, 950000, 800000, 800000, 800000, 800000, 800000, 800000, 800000],
+
+                },
+                {
+                    name: "Hyundai H1",
+                    image: "assets/img/cars_result_img/HYUNDAI_H1.jpg",
+                    description: "Van espaciosa,motor potente.",
+                    passengers: 11,
+                    colors: ["Gris"],
+                    transmission: "Automático",
+                    motor: "2.4",
+                    fuel: "Diesel Podium",
+                    ac: "Sí",
+                    radio: "Sí",
+                    warranty: 2000000,
+                    limited: [800000, 760000, 660000, 600000, 440000, 440000, 440000, 440000, 440000, 440000, 440000],
+                    unlimited: [1300000, 900000, 850000, 650000, 500000, 500000, 500000, 500000, 500000, 500000, 500000],
+
+                },
+                {
+                    name: "Kia Picanto 2025",
+                    image: "assets/img/cars_result_img/Kia_Picanto2025.jpg",
+                    description: "Estilo y tecnología.",
+                    passengers: 5,
+                    colors: ["Blanco,Gris, Plata"],
+                    transmission: "Automático",
+                    motor: "1.0",
+                    fuel: "Especial 95 octanos",
+                    ac: "Sí",
+                    radio: "Sí",
+                    warranty: 750000,
+                    limited: [260000, 245000, 220000, 200000, 190000, 190000, 190000, 190000, 190000, 190000, 190000],
+                    unlimited: [350000, 320000, 275000, 230000, 220000, 220000, 220000, 220000, 220000, 220000, 220000],
+
+                },
+                {
+                    name: "Nissan Qashqai",
+                    image: "assets/img/cars_result_img/Nissan_Qashqai.jpg",
+                    description: "Estilo y tecnología.",
+                    passengers: 5,
+                    colors: ["Gris"],
+                    transmission: "Automático",
+                    motor: "1.3 Turbo",
+                    fuel: "Nafta Super 97 octanos",
+                    ac: "Sí",
+                    radio: "Sí",
+                    warranty: 2000000,
+                    limited: [470000, 420000, 390000, 370000, 340000, 340000, 340000, 340000, 340000, 340000, 340000],
+                    unlimited: [570000, 520000, 470000, 420000, 370000, 370000, 370000, 370000, 370000, 370000, 370000],
+
+                }
+            ];
+
+
+
+            function calculateQuotes() {
+    const days = parseInt(document.getElementById('days').value);
+    const mileageType = document.getElementById('mileage').value;
+
+    // Validación para asegurar que los días sean correctos
+    if (!days || days < 1) {
+        alert('Por favor ingrese un número válido de días');
+        return;
+    }
+
+    const resultsDiv = document.getElementById('results');
+    const resultsBody = document.getElementById('resultsBody');
+    resultsBody.innerHTML = ''; // Limpiar resultados anteriores
+
+    // Iterar sobre cada coche
+    cars.forEach(car => {
+        let pricePerDay = (mileageType === 'limited') ? getPriceForDays(car.limited, days) : getPriceForDays(car.unlimited, days);
+        let totalWithWarranty = pricePerDay * days + car.warranty;
+        let totalWithoutWarranty = pricePerDay * days;
+
+        const row = `
+                <tr>
+                <td><a href="result_cot2_consult.html" onclick="selectCar('${car.name}', '${mileageType}', ${days}, ${car.warranty}, ${totalWithWarranty}, '${car.image}', ${car.passengers}, '${car.colors.join(', ')}', '${car.transmission}', '${car.motor}', '${car.fuel}', '${car.ac}', '${car.radio}', ${pricePerDay})">${car.name}</a></td>
+                <td>Gs.${pricePerDay.toLocaleString()}</td>
+                <td>Gs.${car.warranty.toLocaleString()}</td>
+                <td>Gs.${totalWithoutWarranty.toLocaleString()}</td>
+                <td>Gs.${totalWithWarranty.toLocaleString()}</td>
+                </tr>
+        `;
+        resultsBody.innerHTML += row;
+    });
+
+    resultsDiv.style.display = 'block';
+    resultsDiv.scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+            // Guardar información del coche seleccionado en localStorage
+            function selectCar(name, mileageType, days, warranty, totalPrice, image, passengers, colors, transmission, motor, fuel, ac, radio, pricePerDay) {
+                // Verificar que los datos se están pasando correctamente
+                console.log(days); // Verificar los días antes de almacenarlos
+                localStorage.setItem('selectedCar', JSON.stringify({
+                    name,
+                    mileageType,
+                    days, // Guardar los días correctamente
+                    warranty,
+                    totalPrice,
+                    image,
+                    passengers,
+                    colors,
+                    transmission,
+                    motor,
+                    fuel,
+                    ac,
+                    radio,
+                    pricePerDay
+                }));
+            }
+
+            // Obtener el precio según los días
+            function getPriceForDays(priceArray, days) {
+                if (days >= 1 && days <= 2) return priceArray[0]; // De 1 a 2 días
+                if (days >= 3 && days <= 5) return priceArray[1]; // De 3 a 5 días
+                if (days >= 6 && days <= 15) return priceArray[2]; // De 6 a 15 días
+                if (days >= 16 && days <= 22) return priceArray[3]; // De 16 a 22 días
+                if (days >= 23 && days <= 30) return priceArray[4]; // De 23 a 30 días
+                if (days >= 31 && days <= 61) return priceArray[5]; // De 31 a 61 días
+                if (days >= 62 && days <= 91) return priceArray[6]; // De 62 a 91 días
+                if (days >= 92 && days <= 181) return priceArray[7]; // De 92 a 181 días
+                if (days >= 182 && days <= 271) return priceArray[8]; // De 182 a 271 días
+                if (days >= 272 && days <= 365) return priceArray[9]; // De 272 a 365 días
+                if (days >= 366 && days <= 730) return priceArray[10]; // De 366 a 730 días
+                return null; // Para días mayores a 730 o valores no válidos
+            }
+
+
+
+            // Obtener el campo de entrada
+            const daysInput = document.getElementById('days');
+
+            // Añadir un evento para validar cuando el valor cambie
+            daysInput.addEventListener('input', function() {
+                // Convertir el valor a un número
+                const days = parseInt(daysInput.value, 10);
+
+                // Validar que el valor sea un número válido
+                if (isNaN(days) || days <= 0) {
+                    alert('El número de días debe ser un valor positivo.');
+                    daysInput.value = ''; // Limpiar el campo si el valor no es válido
+                    return;
+                }
+
+                // Comprobar si el valor es mayor a 730
+                if (days > 730) {
+                    alert('El número de días no puede ser mayor a 730.');
+                    daysInput.value = 730; // Limitar el valor a 730
+                }
+            });
+
+        </script>
+
+
+
+        <!--Footer-->
+        <br><br><br><br><br><br><br><br>
+        <footer class="footer">
+            <div style="text-align: center;">
+                <img src="assets/img/WMLogo_Web_Grey.png" alt="">
+            </div>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Rent a Car-WM | Resultados</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <script src="autos.js" defer></script>
+    <!--Main -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!--<link href="assets/css/styles_coti.css" rel="stylesheet">-->
+    <link href="assets/css/styles.css" rel="stylesheet">
+
+
+    <!--Redes Botón -->
+    <style type="text/css">
+        .social-buttons {
+            position: fixed;
+            bottom: 20px;
+            /* Ajusta la posición vertical */
+            right: 20px;
+            /* Ajusta la posición horizontal */
+            display: flex;
+            flex-direction: column;
+            /* Coloca los botones en columna */
+            gap: 10px;
+            /* Espacio entre botones */
+        }
+
+        .icono {
+            font-size: 140px;
+            /*  */
+        }
+
+        /* Estilo para listas de descripciones de autos */
+        .car-description-list {
+            text-align: left;
+            font-size: 12px;
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .separator {
+            width: 1px;
+            /* Ancho del separador */
+            background-color: #dcdcdc;
+            /* Color del separador */
+            margin: 0 15px;
+            /* Espacio alrededor del separador */
+            height: auto;
+            /* Permite que el separador tome la altura del contenido */
+            border-radius: 2px;
+            /* Opcional: redondear los bordes */
+        }
+
+        .results-title {
+
+            padding: 1em;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 12px;
+            font-style: normal;
+            color: rgb(0, 0, 0);
+        }
+        .results-title_dispo {
+            padding: 1em;
+            background-color: red;
+            border: 1px solid white;
+            border-radius: 8px;
+            font-size: 12px;
+            font-style: normal;
+            color: white;
+        }
+        .titulo_lindito {
+            width: 100%;
+            background-color: ;
+        }
+
+        .cabecera_OK {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 15px;
+            /* Bordes redondeados */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            /* Sombra ligera para resaltar */
+
+        }
+
+        .titulo_texto {
+            font-size: 31px;
+            color: orangered;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            /* Evita saltos de línea */
+            text-decoration: none;
+            /* Sin subrayado */
+        }
+
+        .logo_imagen {
+            height: 50px;
+            margin-left: auto;
+            /* Alinea la imagen a la derecha */
+        }
+
+        /* Boton ir al inicio */
+        .floating-button {
+            position: fixed;
+            /* Fijo para que esté siempre visible */
+            bottom: 70px;
+            /* Distancia desde la parte inferior */
+            right: 20px;
+            /* Distancia desde el lado derecho */
+            background-color: red;
+            /* Color de fondo rojo */
+            color: white;
+            /* Color del texto */
+            padding: 10px 15px;
+            /* Espaciado interno */
+            border-radius: 5px;
+            /* Bordes redondeados */
+            text-decoration: none;
+            /* Sin subrayado */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            /* Sombra para el efecto flotante */
+            font-size: 13px;
+            /* Tamaño de fuente */
+            transition: background 0.3s;
+            /* Transición suave para el color de fondo */
+        }
+
+        .floating-button:hover {
+            color: red;
+            background-color: rgb(255, 255, 255);
+            /* Color de fondo al pasar el mouse */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ======= Top Bar ======= -->
+
+
+    <!-- ======= Header ======= -->
+    <!-- Fin Header -->
+
+    <!-- ======= Inicio Section ======= -->
+
+
+    <main id="main">
+
+
+
+
+        <!-- ======= Cta Section ======= -->
+        <div class="titulo_lindito">
+            <div class="cabecera_OK">
+                <div class="titulo_texto">Cotización</div>
+                <img src="assets/img/WMLogo.png" alt="WM Logo" class="logo_imagen">
+            </div>
+            <br>
+            <div>
+                <a href="index.html">Inicio/</a>
+                <a href="results.html">Cotización/</a>
+
+            </div>
+        </div>
+
+        <section>
+            <div id="results" class="results-container">
+
+
+            </div>
+        </section>
+
+        <section id="clients" class="clients">
+            <div class="container" data-aos="zoom-in">
+
+                <div class="clients-slider swiper">
+                    <div class="swiper-wrapper align-items-center">
+                        <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+        </section><!-- End Clients Section -->
+
+
+
+        <!--Script Importante-->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const storedCars = localStorage.getItem('autosResults');
+                const cars = storedCars ? JSON.parse(storedCars) : [
+                    {
+                        name: "Nissan Versa 2024",
+                        image: "assets/img/cars_result_img/nissan_versa_2024.jpg",
+                        description: "Diseño moderno, ideal para familias.",
+                        passengers: 5,
+                        colors: ["Azul", "Blanco"],
+                        transmission: "Mecánico",
+                        motor: "1.6",
+                        fuel: "Nafta 97 Octanos",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 1000000,
+                        limited: [380000, 340000, 330000, 265000, 250000],
+                        unlimited: [490000, 450000, 380000, 340000, 260000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    },
+                    {
+                        name: "Kia Soluto Automático",
+                        image: "assets/img/cars_result_img/kia_soluto_automatico.jpeg",
+                        description: "Compacto y práctico, bajo consumo.",
+                        passengers: 5,
+                        colors: ["Negro", "Azul"],
+                        transmission: "Automático",
+                        motor: "1.4",
+                        fuel: "Nafta 97 Octanos",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 1000000,
+                        limited: [340000, 300000, 270000, 230000, 220000],
+                        unlimited: [450000, 380000, 330000, 280000, 240000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    },
+                    {
+                        name: "Kia Soluto Mecánico",
+                        image: "assets/img/cars_result_img/kia_soluto_automatico.jpeg",
+                        description: "Economía y control manual.",
+                        passengers: 5,
+                        colors: ["Blanco", "Gris"],
+                        transmission: "Mecánico",
+                        motor: "1.4",
+                        fuel: "Nafta 95 Octanos",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 700000,
+                        limited: [270000, 250000, 220000, 200000, 190000],
+                        unlimited: [380000, 350000, 280000, 250000, 220000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    },
+                    {
+                        name: "Toyota New Allion",
+                        image: "assets/img/cars_result_img/TOYOTA NEW ALLION.jpg",
+                        description: "Espacioso y cómodo, motor eficiente.",
+                        passengers: 5,
+                        colors: ["Blanco", "Perla"],
+                        transmission: "Automático",
+                        motor: "1.5",
+                        fuel: "Nafta 92-95 Octanos",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 700000,
+                        limited: [260000, 250000, 225000, 200000, 180000],
+                        unlimited: [380000, 340000, 280000, 250000, 220000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    },
+                    {
+                        name: "Chery Arrizo",
+                        image: "assets/img/cars_result_img/Chery_Arrizo.jpg",
+                        description: "Diseño elegante, rendimiento eficiente.",
+                        passengers: 5,
+                        colors: ["Blanco"],
+                        transmission: "Automático",
+                        motor: "1.5",
+                        fuel: "Nafta 92-95 Octanos",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 700000,
+                        limited: [260000, 250000, 225000, 200000, 180000],
+                        unlimited: [380000, 340000, 280000, 250000, 220000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    },
+                    {
+                        name: "Toyota New Vitz",
+                        image: "assets/img/cars_result_img/Toyota_New_Vitz.jpg",
+                        description: "Compacto y versátil, motor eficiente.",
+                        passengers: 4,
+                        colors: ["Gris", "Plata", "Rojo"],
+                        transmission: "Automático",
+                        motor: "1.3",
+                        fuel: "Nafta 92-95 Octanos",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 500000,
+                        limited: [240000, 220000, 200000, 165000, 150000],
+                        unlimited: [350000, 300000, 240000, 200000, 190000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    },
+                    {
+                        name: "SsangYong Tivoli",
+                        image: "assets/img/cars_result_img/SsangYong_Tivoli.jpg",
+                        passengers: 5,
+                        colors: ["Azul", "Plata"],
+                        description: "SUV moderno, amplio espacio interior.",
+                        transmission: "Automático",
+                        motor: "1.6",
+                        fuel: "Nafta 97 Octanos",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 2000000,
+                        limited: [450000, 400000, 370000, 350000, 320000],
+                        unlimited: [550000, 500000, 450000, 400000, 350000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    },
+                    {
+                        name: "VW T-Cross 2025",
+                        image: "assets/img/cars_result_img/VW_T_CROSS_2025.jpg",
+                        description: "SUV compacto, diseño deportivo.",
+                        passengers: 5,
+                        colors: ["Azul", "Blanco"],
+                        transmission: "Automático",
+                        motor: "1.0",
+                        fuel: "Nafta 97 Octanos",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 1000000,
+                        limited: [400000, 380000, 350000, 310000, 280000],
+                        unlimited: [490000, 450000, 380000, 365000, 310000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    },
+                    {
+                        name: "Nissan Kiks",
+                        image: "assets/img/cars_result_img/NISSAN_KIKS.jpg",
+                        description: "Confiabilidad Nissan, diseño robusto.",
+                        passengers: 5,
+                        colors: ["Gris"],
+                        transmission: "Automático",
+                        motor: "1.6",
+                        fuel: "Nafta 97 Octanos",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 1000000,
+                        limited: [400000, 380000, 350000, 310000, 280000],
+                        unlimited: [490000, 450000, 380000, 365000, 310000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    },
+                    {
+                        name: "Kia Sportage 2025",
+                        image: "assets/img/cars_result_img/KIA_SPORTAGE_2025.jpg",
+                        description: "Potente SUV, diseño dinámico.",
+                        passengers: 5,
+                        colors: ["Gris"],
+                        transmission: "Automático",
+                        motor: "2.0",
+                        fuel: "Nafta 97 Octanos",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 2000000,
+                        limited: [750000, 730000, 680000, 600000, 480000],
+                        unlimited: [950000, 880000, 780000, 720000, 650000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    },
+                    {
+                        name: "Nissan Frontier 2025",
+                        image: "assets/img/cars_result_img/NISSAN_FRONTIER_2025.jpg",
+                        description: "Camioneta robusta, gran capacidad.",
+                        passengers: 5,
+                        colors: ["Negro"],
+                        transmission: "Automático",
+                        motor: "2.5",
+                        fuel: "Diesel Podium",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 7500000,
+                        limited: [1300000, 1100000, 1000000, 950000, 800000],
+                        unlimited: [1300000, 1100000, 1000000, 950000, 800000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    },
+                    {
+                        name: "Mazda BT50",
+                        image: "assets/img/cars_result_img/MAZDA_BT50.jpg",
+                        description: "Estilo ideal, robusto y moderno.",
+                        passengers: 5,
+                        colors: ["Blanco"],
+                        transmission: "Automático",
+                        motor: "3.0",
+                        fuel: "Diesel Podium",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 7500000,
+                        limited: [1300000, 1100000, 1000000, 950000, 800000],
+                        unlimited: [1300000, 1100000, 1000000, 950000, 800000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    },
+                    {
+                        name: "Hyundai H1",
+                        image: "assets/img/cars_result_img/HYUNDAI_H1.jpg",
+                        description: "Van espaciosa,motor potente.",
+                        passengers: 11,
+                        colors: ["Gris"],
+                        transmission: "Automático",
+                        motor: "2.4",
+                        fuel: "Diesel Podium",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 2000000,
+                        limited: [800000, 760000, 660000, 600000, 440000],
+                        unlimited: [1300000, 900000, 850000, 650000, 500000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    },
+                    {
+                        name: "Kia Picanto 2025",
+                        image: "assets/img/cars_result_img/Kia_Picanto2025.jpg",
+                        description: "Estilo y tecnología.",
+                        passengers: 5,
+                        colors: ["Blanco,Gris, Plata"],
+                        transmission: "Automático",
+                        motor: "1.0",
+                        fuel: "Especial 95 octanos",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 750000,
+                        limited: [260000, 245000, 220000, 200000, 190000],
+                        unlimited: [350000, 320000, 275000, 230000, 220000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    },
+                    {
+                        name: "Nissan Qashqai",
+                        image: "assets/img/cars_result_img/Nissan_Qashqai.jpg",
+                        description: "Estilo y tecnología.",
+                        passengers: 5,
+                        colors: ["Gris"],
+                        transmission: "Automático",
+                        motor: "1.3 Turbo",
+                        fuel: "Nafta Super 97 octanos",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 1200000,
+                        limited: [470000, 420000, 390000, 370000, 340000],
+                        unlimited: [570000, 520000, 470000, 420000, 370000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    },
+                    {
+                        name: "Mitsubishi New L200",
+                        image: "assets/img/cars_result_img/Mitsubishi_l200.png",
+                        description: "Estilo y tecnología.",
+                        passengers: 5,
+                        colors: ["Plata"],
+                        transmission: "Automático",
+                        motor: "2.4",
+                        fuel: "Diesel Podium S10",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 4000000,
+                        limited: [1300000, 1100000, 1000000, 950000, 800000],
+                        unlimited: [1300000, 1100000, 1000000, 950000, 800000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    },
+                    {
+                        name: "Mitsubishi Mirage",
+                        image: "assets/img/cars_result_img/Mitsubishi_Mirage.png",
+                        description: "Estilo y tecnología.",
+                        passengers: 5,
+                        colors: ["Negro, Blanco"],
+                        transmission: "Automático",
+                        motor: "1.2",
+                        fuel: "Nafta Super 97",
+                        ac: "Sí",
+                        radio: "Sí",
+                        warranty: 750000,
+                        limited: [260000, 245000, 220000, 200000, 190000],
+                        unlimited: [350000, 320000, 275000, 230000, 220000],
+                        pickupDate: "2024-12-20", // Fechas ejemplo
+                        returnDate: "2024-12-30",
+                        pricingType: "limited",
+                        availability: "no disponible" // Valor "no disponible" para ejemplo
+                    }
+                ];
+
+                const params = new URLSearchParams(window.location.search);
+                const pickupDate = new Date(params.get("pickupDate"));
+                const returnDate = new Date(params.get("returnDate"));
+                const pricingType = params.get("pricingType");
+
+                if (isNaN(pickupDate) || isNaN(returnDate)) {
+                    document.getElementById("results").innerHTML =
+                        "<p>Por favor, asegúrese de que las fechas sean válidas.</p>";
+                    return;
+                }
+
+                const timeDiff = Math.abs(returnDate - pickupDate);
+                const days = timeDiff / (1000 * 60 * 60 * 24);
+
+                if (days < 2) {
+                    document.getElementById("results").innerHTML =
+                        "<p>El período mínimo de alquiler es de 2 días. Por favor seleccione fechas válidas.</p>";
+                    return;
+                }
+
+                const rentalDays = Math.ceil(days);
+
+                let priceRangeIndex;
+                if (rentalDays <= 2) {
+                    priceRangeIndex = 0;
+                } else if (rentalDays <= 5) {
+                    priceRangeIndex = 1;
+                } else if (rentalDays <= 15) {
+                    priceRangeIndex = 2;
+                } else if (rentalDays <= 22) {
+                    priceRangeIndex = 3;
+                } else {
+                    priceRangeIndex = 4;
+                }
+
+                const formattedPickupDate = pickupDate.toLocaleDateString("es-ES");
+                const formattedReturnDate = returnDate.toLocaleDateString("es-ES");
+                const formattedPricingType =
+                    pricingType === "limited"
+                        ? "Precio por km limitado (120 km diarios)"
+                        : "Precio por km libre";
+
+                let resultsHtml = "";
+
+                cars.forEach((car) => {
+                    const price =
+                        pricingType === "limited"
+                            ? car.limited[priceRangeIndex]
+                            : car.unlimited[priceRangeIndex];
+                    const totalPriceWithoutWarranty = Math.round(price * rentalDays);
+                    const totalPriceWithWarranty = Math.round(
+                        totalPriceWithoutWarranty + car.warranty
+                    );
+
+                    const formattedCarPickup = car.pickupDate
+                        ? new Date(car.pickupDate).toLocaleDateString("es-ES")
+                        : "N/A";
+                    const formattedCarReturn = car.returnDate
+                        ? new Date(car.returnDate).toLocaleDateString("es-ES")
+                        : "N/A";
+
+                    resultsHtml += `
+                        <div class="car-card">
+                            <h3>${car.name}</h3>
+                            <img src="${car.image}" alt="${car.name}" class="car-image">
+                            <div class="results-title_dispo" style="text-align: left;">
+                                <strong>Estado:</strong> ${car.availability === "disponible"
+                            ? "Disponible"
+                            : `Alquilado <br> Desde: ${formattedCarPickup} <br> Hasta: ${formattedCarReturn}`
+                        }
+                                </div>
+                            <ul class="car-details">
+                                <li><strong>Pasajeros:</strong> ${car.passengers}</li>
+                                <li><strong>Colores disponibles:</strong> ${car.colors.join(", ")}</li>
+                                <li><strong>Transmisión:</strong> ${car.transmission}</li>
+                                <li><strong>Motor:</strong> ${car.motor}</li>
+                                <li><strong>Tipo de combustible:</strong> ${car.fuel}</li>
+                                <li><strong>Aire acondicionado:</strong> ${car.ac}</li>
+                                <li><strong>Radio Bluetooth:</strong> ${car.radio}</li>
+                                <li><strong>Garantía:</strong> ${car.warranty.toLocaleString("es-ES")} gs.</li>
+                                <li><strong>Precio por día:</strong> ${price.toLocaleString("es-ES")} gs.</li>
+                                </ul>
+                                
+                            <div style="background-color: #f2f2f2; padding: 10px; border-radius: 5px; margin-bottom: 10px; border: 1px solid #ddd;">
+                                <div class="price-info">
+                                    <strong>Sub total:</strong> 
+                                    <div class="total-price1">${totalPriceWithoutWarranty.toLocaleString("es-ES")} gs.</div>
+                                    <strong>Total con garantía:</strong> 
+                                    <div class="total-price">${totalPriceWithWarranty.toLocaleString("es-ES")} gs.</div>
+                                    <p>por ${rentalDays} día(s)</p>
+                                    <div class="results-title" style="text-align: left;">
+                                        <p><strong>Tarifa:</strong> ${formattedPricingType}</p>
+                                        <p><strong>Fecha de Retiro:</strong> ${formattedPickupDate}</p>
+                                        <p><strong>Fecha de Entrega:</strong> ${formattedReturnDate}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            ${car.availability === "disponible"
+                            ? `<button type="button" onclick="saveCarDataAndRedirect('${car.name}', ${car.passengers}, '${car.colors.join(", ")}', '${car.transmission}', '${car.motor}', '${car.fuel}', '${car.ac}', '${car.radio}', ${car.warranty}, ${price}, ${rentalDays}, ${totalPriceWithWarranty}, ${totalPriceWithoutWarranty}, '${car.image}', '${pickupDate.toISOString()}', '${returnDate.toISOString()}', '${pricingType}', '${car.availability}')">Alquilar</button>`
+                            : ""
+                        }
+                        </div>
+                    `;
+                });
+
+                document.getElementById("results").innerHTML = resultsHtml;
+            });
+
+            function saveCarDataAndRedirect(
+                name,
+                passengers,
+                colors,
+                transmission,
+                motor,
+                fuel,
+                ac,
+                radio,
+                warranty,
+                price,
+                days,
+                totalPriceWithWarranty,
+                totalPriceWithoutWarranty,
+                image,
+                pickupDate,
+                returnDate,
+                pricingType,
+                availability
+            ) {
+                const carData = {
+                    name,
+                    passengers,
+                    colors: colors.split(", "),
+                    transmission,
+                    motor,
+                    fuel,
+                    ac,
+                    radio,
+                    warranty: warranty.toLocaleString("es-ES") + " gs",
+                    price: price.toLocaleString("es-ES") + " gs",
+                    totalPriceWithWarranty: totalPriceWithWarranty.toLocaleString("es-ES") + " gs",
+                    totalPriceWithoutWarranty: totalPriceWithoutWarranty.toLocaleString("es-ES") + " gs",
+                    image,
+                    rentalDays: days,
+                    pickupDate: new Intl.DateTimeFormat("es-ES").format(new Date(pickupDate)),
+                    returnDate: new Intl.DateTimeFormat("es-ES").format(new Date(returnDate)),
+                    pricingType,
+                    availability
+                };
+
+                localStorage.setItem("selectedCarData", JSON.stringify(carData));
+                window.location.href = "pedido.html";
+            }
+        </script>
+
+        <!--Script par verificar la caducidad de disponibilidad-->
+
+        <script>
+            function updateCarAvailability() {
+                const storedCars = localStorage.getItem('autosResults');
+                if (!storedCars) return;
+
+                const cars = JSON.parse(storedCars);
+                const currentDate = new Date();
+
+                cars.forEach(car => {
+                    if (car.availability === "no disponible" && car.returnDate) {
+                        const returnDate = new Date(car.returnDate);
+
+                        // Verifica si la fecha actual es posterior a la fecha de retorno
+                        if (currentDate > returnDate) {
+                            car.availability = "disponible";
+                            car.pickupDate = null; // Limpia las fechas antiguas
+                            car.returnDate = null;
+                        }
+                    }
+                });
+
+                // Actualiza la lista en el localStorage
+                localStorage.setItem('autosResults', JSON.stringify(cars));
+            }
+
+            // Ejecuta la función al cargar la página
+            document.addEventListener("DOMContentLoaded", updateCarAvailability);
+
+        </script>
+
+
+
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Contacto</h2>
+                </div>
+
+                <div class="row mt-1 d-flex justify-content-end" data-aos="fade-right" data-aos-delay="100">
+
+                    <div class="col-lg-5">
+                        <div class="info">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Dirección:</h4>
+                                <p>San Miguel Esq. Feliciando Duarte - San Lorenzo</p>
+                            </div>
+
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Correo:</h4>
+                                <p>reservas@rentacarwn.com.py</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>Celular:</h4>
+                                <p>0983 496 378</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="100">
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3780.850465541043!2d-57.53274322461477!3d-25.301776677643765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDE4JzA2LjQiUyA1N8KwMzEnNDguNiJX!5e1!3m2!1sen!2spy!4v1728036010897!5m2!1sen!2spy"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright 2024 <strong><span>Rent a Car - WM </span></strong> Derechos Reservados.
+            </div>
+            <div class="credits">
+
+                Designed by <a href="https://elvitoca.github.io/VC-Web-Designer/">VC Web Designer 2024</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+    <a href="index.html" class="floating-button">Ir al inicio</a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <div class="social-buttons">
+        <!--<a href="https://facebook.com" target="_blank" class="social-button facebook"><i class="bi bi-facebook"></i></a>-->
+        <!--<a href="https://twitter.com" target="_blank" class="social-button twitter"><i class="bi bi-twitter"></i></a>-->
+        <!--<a href="https://wa.me/+595983496378" target="_blank" class="social-button instagram"><i class="bi bi-whatsapp fs-2"></i></a>-->
+
+    </div>
+</body>
+
+</html>

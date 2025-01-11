@@ -1,0 +1,75 @@
+
+1-Nissan Frontier
+Limitado 120km
+-
+    1.300.000,00	1.100.000,00	1.000.000,00	950.000,00	800.000,00
+
+ Libre de km
+-
+    1.300.000,00	1.100.000,00	1.000.000,00	950.000,00	800.000,00
+
+3-Kia Sportage
+ Limitado 120km
+-
+	750.000,0	730.000,0	680.000,0	600.000,0	480.000,0
+
+ Libre de km
+-
+	950.000,00	880.000,00	780.000,00	720.000,00	650.000,00
+
+2-Mazda bt50
+Limitado 120km
+-
+    1.300.000,00	1.100.000,00	1.000.000,00	950.000,00	800.000,00
+
+ Libre de km
+-
+    1.300.000,00	1.100.000,00	1.000.000,00	950.000,00	800.000,00
+--------------------------------------------------------------------------------
+
+                                           name: "Kia Sportage 2025",
+                                           image: "assets/img/cars_result_img/KIA_SPORTAGE_2025.jpg",
+                                           description: "Potente SUV, diseño dinámico.",
+                                           passengers: 5,
+                                           colors: ["Gris"],
+                                           transmission: "Automático",
+                                           motor: "2.0",
+                                           fuel: "Nafta 97 Octanos",
+                                           ac: "Sí",
+                                           radio: "Sí",
+                                           warranty: 3000000,
+                                           limited: [750000, 730000, 680000, 600000, 480000],
+                                           unlimited: [950000, 880000, 780000, 720000, 650000],
+
+
+                                           name: "Nissan Frontier 2025",
+                                           image: "assets/img/cars_result_img/NISSAN_FRONTIER_2025.jpg",
+                                           description: "Camioneta robusta, gran capacidad.",
+                                           passengers: 5,
+                                           colors: ["Negro"],
+                                           transmission: "Automático",
+                                           motor: "2.5",
+                                           fuel: "Diesel Podium",
+                                           ac: "Sí",
+                                           radio: "Sí",
+                                           warranty: 7500000,
+                                           limited: [1300000, 1100000, 1000000, 950000, 800000],
+                                           unlimited: [1300000, 1100000, 1000000, 950000, 800000],
+
+
+                                           name: "Mazda BT50",
+                                           image: "assets/img/cars_result_img/MAZDA_BT50.jpg",
+                                           description: "Estilo ideal, robusto y moderno.",
+                                           passengers: 5,
+                                           colors: ["Blanco"],
+                                           transmission: "Automático",
+                                           motor: "3.0",
+                                           fuel: "Diesel Podium",
+                                           ac: "Sí",
+                                           radio: "Sí",
+                                           warranty: 7500000,
+                                           limited: [1300000, 1100000, 1000000, 950000, 800000],
+                                           unlimited: [1300000, 1100000, 1000000, 950000, 800000],
+
+
+

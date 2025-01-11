@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Rent a Car WM | Alquiler de Vehículos en Paraguay</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alquiler y renta de vehículos en Paraguay. Encuentra autos económicos y de lujo para alquilar en Rent a Car WM. ¡Renta un auto con facilidad y seguridad!">
+    <meta name="keywords" content="alquiler de vehículos, renta de autos, alquiler de autos, renta de vehículos, autos en Paraguay, Rent a Car WM, alquiler de autos en Paraguay">
+    <meta name="author" content="Rent a Car WM">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.rentacarwm.com.py">
+
+
+
+    <!-- Metadatos para Facebook Open Graph -->
+    <meta property="og:title" content="Alquiler de Vehículos en Paraguay | Rent a Car WM">
+    <meta property="og:description" content="Renta un auto con facilidad y seguridad en Paraguay. Rent a Car WM ofrece autos económicos y de lujo.">
+    <meta property="og:image" content="https://www.rentacarwm.com/assets//images/favicon.png"> <!-- Imagen compartida en redes -->
+    <meta property="og:url" content="https://www.rentacarwm.com.py">
+    <meta property="og:type" content="website">
+
+    <!-- Metadatos para Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alquiler de Vehículos en Paraguay | Rent a Car WM">
+    <meta name="twitter:description" content="Encuentra autos económicos y de lujo para alquilar en Paraguay. ¡Renta fácil y seguro!">
+    <meta name="twitter:image" content="https://www.rentacarwm.com/assets//images/favicon.png">
+
+    <!-- Otros enlaces y scripts -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.rentacarwm.com.py/favicon.ico" type="image/x-icon">
+
+
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!--Main -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!--<link href="assets/css/styles_coti.css" rel="stylesheet">-->
+    <link href="assets/css/styles.css" rel="stylesheet">
+
+
+
+    <!--Redes Botón -->
+    <style type="text/css">
+        .social-buttons {
+            position: fixed;
+            bottom: 20px;
+            /* Ajusta la posición vertical */
+            right: 20px;
+            /* Ajusta la posición horizontal */
+            display: flex;
+            flex-direction: column;
+            /* Coloca los botones en columna */
+            gap: 10px;
+            /* Espacio entre botones */
+        }
+
+        .icono {
+            font-size: 140px;
+            /*  */
+        }
+
+        .separator {
+            width: 1px;
+            /* Ancho del separador */
+            background-color: #dcdcdc;
+            /* Color del separador */
+            margin: 0 15px;
+            /* Espacio alrededor del separador */
+            height: auto;
+            /* Permite que el separador tome la altura del contenido */
+            border-radius: 2px;
+            /* Opcional: redondear los bordes */
+        }
+
+
+        /* Carrusel */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: auto;
+            /* Centra el contenedor horizontalmente */
+        }
+
+        .carousel_align {
+            text-align: center;
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            /* Ocupa todo el ancho del contenedor */
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+            /* Ajustable a la cantidad de imágenes */
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: auto;
+            /* Mantiene la proporción de la imagen */
+        }
+
+        /* Botones del carrusel */
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+            border-radius: 50%;
+            width: 2.5em;
+            transition: background-color 0.3s, font-size 0.3s, padding 0.3s;
+        }
+
+        .carousel-button.prev {
+            left: 10px;
+        }
+
+        .carousel-button.next {
+            right: 10px;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .coti_2_btn a {
+            padding: 0.5em;
+            background-color: red;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+
+            color: white;
+        }
+
+        .coti_2_btn a:hover {
+
+            background-color: white;
+            color: red;
+        }
+
+
+        /* Responsividad para botones en dispositivos móviles */
+        @media (max-width: 990px) {
+            .carousel-button {
+                font-size: 20px;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .carousel-button {
+                font-size: 18px;
+                padding: 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-button {
+                font-size: 16px;
+                padding: 4px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="fixed-top d-flex align-items-center ">
+        <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+            <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-envelope-fill"></i><a href="mailto:reservas@rentacarwm.com.py">reservas@rentacarwm.com.py</a>
+            </div>
+
+            <div class="contact-info d-flex align-items-center"><i class="bi bi-whatsapp"></i><a href="https://wa.me/+595983496378" target="_blank">0983-496-378</a> </div>
+        </div>
+    </div>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center ">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <h1 class="logo"><a href="index.html">Rent a Car - WM</a></h1>
+            <!--  -->
+            <a href="index.html" class="logo"><img src="assets/img/WMLogo_Web.png" alt="" class="img-fluid"></a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#cotizador">Inicio</a></li>
+                    <li><a class="nav-link scrollto" href="#about">Nosotros</a></li>
+                    <!-- <li><a class="nav-link scrollto" href="#services">Servicios</a></li>-->
+                    <li><a class="nav-link scrollto " href="#portfolio">Flota de vehículos</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
+
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- Fin Header -->
+
+
+    <section id="cotizador" class="about">
+        <div class="container" data-aos="fade-up">
+
+
+
+            <div class="row content">
+                <div class="col-lg-6">
+                    <!-- Form Cotizador -->
+
+                    <form id="rentalForm" action="results.html" method="GET">
+                        <h4>Cotizador - Fecha de Retiro/Entrega</h4>
+                        <div style="font-size: 13px; font-style: italic;">A partir de 2 días - Sujeto a tipo de tarifa (Limitado 120km - Ilimitado)</div>
+
+                        <label for="pickupDate">Fecha y Hora de Retiro:</label>
+                        <input type="datetime-local" id="pickupDate" name="pickupDate" required>
+
+                        <label for="returnDate">Fecha y Hora de Entrega:</label>
+                        <input type="datetime-local" id="returnDate" name="returnDate" required>
+
+                        <label for="pricingType">Tipo de Tarifa:</label>
+                        <select id="pricingType" name="pricingType" required>
+                            <option value="limited">Precio por km limitado (120 km diarios)</option>
+                            <option value="unlimited">Precio km libre</option>
+                        </select>
+                        <br><br>
+                        <div style="text-align: center;">
+                            <button type="submit">Cotizar</button>
+                            <br><br>
+                        <div class="coti_2_btn">
+
+                                <a href="cotizador_2_idea.html">Consulta por días ingresados</a>
+                            </div><br>
+                        </div>
+                    </form>
+                </div>
+                <!-- Fin Form Cotizador -->
+
+                <!-- Requisitos -->
+                <div class="col-lg-6 pt-4 pt-lg-0" style="color: aliceblue;">
+                    <div class="requirements-container d-flex" style="gap: 20px;">
+                        <!-- Requisitos para Alquilar -->
+                        <div class="requisitos-alquilar">
+                            <h4>Requisitos p/ alquilar</h4>
+                            <div class="icon-box" style="font-size: 11px;">
+                                <ul>
+                                    <li>
+                                        <div class="icon"><i class="bx bx-user"></i></div>
+                                        Cédula de Identidad.
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="bx bx-smile"></i></div>
+                                        Mayor de 23 años.
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="bx bx-car"></i></div>
+                                        Registro de Conducir.
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="bx bx-current-location"></i></div>
+                                        Ubicación de domicilio.
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="bx bx-credit-card"></i></div>
+                                        Tarjeta de Crédito.
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="bx bx-list-check"></i></div>
+                                        Comprobante de Ingreso.
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="bx bx-money"></i></div>
+                                        Formas de pago:
+                                        <ul style="list-style-type: disc;">
+                                            <br>
+
+                                            <li>Transferencia Bancaria.</li>
+                                            <li>Dinero en Efectivo.</li>
+                                            <li>Pago Online Tpago</li>
+                                            <li>Pos Bancar</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Separador vertical -->
+                        <div class="separator"></div>
+
+                        <!-- Requisitos para Extranjeros -->
+                        <div class="requisitos-extranjeros">
+                            <h4>Requisitos p/ Extranjeros</h4>
+                            <div class="icon-box" style="font-size: 11px;">
+                                <ul>
+                                    <li>
+                                        <div class="icon"><i class="bx bx-user"></i></div>
+                                        Pasaporte o CI.
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="bx bx-smile"></i></div>
+                                        Mayor de 23 años.
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="bx bx-car"></i></div>
+                                        Registro de Conducir.
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="bx bx-money"></i></div>
+                                        Formas de pago:
+                                        <ul style="list-style-type: disc;">
+                                            <br>
+
+                                            <li>Transferencia Bancaria.</li>
+                                            <li>Dinero en Efectivo.</li>
+                                            <li>Pago Online Tpago</li>
+                                            <li>Pos Bancar</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+    <main id="main">
+
+
+
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Opciones para Alquilar</h2>
+                    <p></p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon-box">
+                            <i class="bi bi-card-"></i>
+                            <h4><a href="#">KM Limitado</a></h4>
+                            <p>Tienes 120 km por día para recorrer, adiccional 4,000 gs. por cada kilómetro extra.</p>
+
+
+                            <i class="bi bi-card-"></i>
+                            <h4><a href="#">KM Libre</a></h4>
+                            <p>Sin límite de kilometraje, especial para viajar al interior del país.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon-box">
+                            <i class="bi bi-bar-"></i>
+                            <h4><a href="#">Depósito de garantía</a></h4>
+                            <ul>
+
+                                <li>Se deja como garantía un monto equivalente a la franquicia del seguro del vehículo. </li>
+                                <li> Dicho monto de garantía se reembolsa al cliente, si se devuelve el vehículo en las mismas condiciones que lo retiro.</li>
+                                <li>Los montos de garantía varian según el modelo de vehículo. </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!--  -->
+
+
+        <section id="clients" class="clients">
+            <div class="container" data-aos="zoom-in">
+
+                <div class="clients-slider swiper">
+                    <div class="swiper-wrapper align-items-center">
+                        <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
+                        <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+        </section><!-- End Clients Section -->
+
+
+        <!-- Carrusel section -->
+
+
+        <section class="carousel_align">
+
+        </section>
+
+
+
+        <!-- ======= Inicio Section ======= 
+   
+    <section id="hero" class="d-flex justify-cntent-center align-items-center">
+        <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+            
+            <div class="carousel-item active">
+                <div class="carousel-container">
+                   
+                    <div>
+                        <img src="assets/img/portfolio/portfolio-1.jpeg" alt="" style=" width: 25em; height: 25em;">
+                    </div>
+                    
+                </div>
+            </div>
+
+            
+            <div class="carousel-item">
+                <div class="carousel-container">
+                    <div>
+                        <img src="assets/img/portfolio/portfolio-1.jpeg" alt="" style=" width: 25em; height: 25em;">
+                    </div>
+                </div>
+            </div>
+
+                        <div class="carousel-item">
+                <div class="carousel-container">
+                    <div>
+                        <img src="assets/img/portfolio/portfolio-1.jpeg" alt="" style=" width: 25em; height: 25em;">
+                    </div>
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+            </a>
+
+            <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+            </a>
+
+        </div>
+    </section>
+-->
+
+
+
+        <br><br><br>
+
+
+        <!-- ======= Why Us Section ======= -->
+        <section id="about" class="why-us">
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-lg-5 align-items-stretch position-relative video-box" style="background-image: url('assets/img/why-us.jpg');" data-aos="fade-right">
+                    </div>
+
+
+                    <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch" data-aos="fade-left">
+
+                        <div class="content">
+                            <h3><strong>¡Disfruta las ofertas de Rent a Car - WM! 🏖️🚗</strong></h3>
+                            <p>
+                                ¿Planeas una escapada de fin de semana? Aprovecha nuestros descuentos especiales del 30% para alquileres a partir de los 3 días de alquiler. No te pierdas nuestras promociones y descuentos exclusivos, encontrá tu promo en nuestro <a href="#cotizador">Cotizador</a>.
+                            </p>
+                        </div>
+
+                        <div class="accordion-list">
+                            <ul>
+                                <li data-aos="fade-up" data-aos-delay="100">
+                                    <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Reserva con Anticipación<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                                        <p>
+                                            Para obtener las mejores tarifas y asegurarte de que el vehículo que deseas esté disponible, es recomendable reservar con antelación. Puedes encontrar descuentos o promociones especiales al reservar con anticipación. Elige la que mejor se ajuste a tus necesidades y presupuesto.
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li data-aos="fade-up" data-aos-delay="200">
+                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span>Lee y Entiende el Contrato de Alquiler<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                                        <p>
+                                            Antes de firmar cualquier acuerdo, asegúrate de leer detenidamente el contrato de alquiler. Presta atención a los términos y condiciones, incluyendo el seguro, las políticas de combustible, los cargos por kilometraje adicional, y las penalizaciones por retraso en la devolución. Conocer todos estos detalles te ayudará a evitar sorpresas desagradables y a comprender claramente tus responsabilidades durante el alquiler.
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li data-aos="fade-up" data-aos-delay="300">
+                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span>Revisa el Vehículo Antes de Salir<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                                        <p>
+                                            Antes de salir del lugar de alquiler, realiza una inspección completa del vehículo. Verifica si hay daños visibles y asegúrate de que todos los sistemas, como el aire acondicionado y los frenos, funcionen correctamente. Toma nota de cualquier daño existente y notifícalo al personal de la empresa para evitar cargos adicionales al momento de devolver el auto.
+                                        </p>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Why Us Section -->
+
+
+        <!---->
+
+
+
+
+        <!-- ======= Autos Section ======= -->
+        <section id="portfolio" class="portfoio">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Flota de vehículos</h2>
+
+                </div>
+
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-track">
+                            <img src="assets/img/portfolio/portfolio-1.jpeg" alt="Imagen 1" class="carousel-image">
+                            <img src="assets/img/portfolio/portfolio-2.jpeg" alt="Imagen 2" class="carousel-image">
+                            <img src="assets/img/portfolio/portfolio-3.jpeg" alt="Imagen 3" class="carousel-image">
+                            <img src="assets/img/portfolio/portfolio-4.jpeg" alt="Imagen 4" class="carousel-image">
+                            <img src="assets/img/portfolio/portfolio-5.jpeg" alt="Imagen 5" class="carousel-image">
+                            <img src="assets/img/portfolio/portfolio-6.jpeg" alt="Imagen 6" class="carousel-image">
+                            <img src="assets/img/portfolio/portfolio-7.jpeg" alt="Imagen 7" class="carousel-image">
+                        </div>
+                    </div>
+                    <button class="carousel-button prev">❮</button>
+                    <button class="carousel-button next">❯</button>
+                </div>
+
+        </section><!-- End Autos Section -->
+
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Contacto</h2>
+                </div>
+
+                <div class="row mt-1 d-flex justify-content-end" data-aos="fade-right" data-aos-delay="100">
+
+                    <div class="col-lg-5">
+                        <div class="info">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Dirección:</h4>
+                                <p>San Miguel Esq. Feliciando Duarte - San Lorenzo</p>
+                            </div>
+
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Correo:</h4>
+                                <p>reservas@rentacarwm.com.py</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>Celular:</h4>
+                                <p>0983 496 378</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="100">
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3780.850465541043!2d-57.53274322461477!3d-25.301776677643765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDE4JzA2LjQiUyA1N8KwMzEnNDguNiJX!5e1!3m2!1sen!2spy!4v1728036010897!5m2!1sen!2spy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright 2024 <strong><span>Rent a Car - WM </span></strong> Derechos Reservados.
+            </div>
+            <div class="credits">
+
+                Designed by <a href="https://elvitoca.github.io/VC-Web-Designer/">VC Web Designer 2024</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+    <!-- Carrusel Script -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.querySelector('.carousel-track');
+            const images = Array.from(track.children);
+            const nextButton = document.querySelector('.carousel-button.next');
+            const prevButton = document.querySelector('.carousel-button.prev');
+
+            let currentIndex = 0;
+            const slideInterval = 3000; // Intervalo de tiempo en milisegundos (3 segundos)
+
+            function updateCarousel() {
+                const slideWidth = images[0].getBoundingClientRect().width;
+                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            }
+
+            function goToNextSlide() {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateCarousel();
+            }
+
+            // Configurar el intervalo automático
+            const autoSlide = setInterval(goToNextSlide, slideInterval);
+
+            // Eventos de los botones para detener el carrusel cuando se navega manualmente
+            nextButton.addEventListener('click', () => {
+                clearInterval(autoSlide); // Detener el intervalo
+                goToNextSlide();
+            });
+
+            prevButton.addEventListener('click', () => {
+                clearInterval(autoSlide); // Detener el intervalo
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateCarousel();
+            });
+
+            window.addEventListener('resize', updateCarousel);
+        });
+
+    </script>
+
+
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <div class="social-buttons">
+        <!--<a href="https://facebook.com" target="_blank" class="social-button facebook"><i class="bi bi-facebook"></i></a>-->
+        <!--<a href="https://twitter.com" target="_blank" class="social-button twitter"><i class="bi bi-twitter"></i></a>-->
+
+        <!--<a href="${whatsappLink}" target="_blank" class="social-button instagram"><i class="bi bi-whatsapp fs-2"></i></a>-->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+Secure SSL/TLS Settings (Recomendado)
+Nombre de usuario:	reservas_wm_autos@rentacarwm.com.py
+Contraseña:xp?#vUa)pCx7
+Servidor entrante:	mail.rentacarwm.com.py
+IMAP Port: 993 POP3 Port: 995
+Servidor de correo:	mail.rentacarwm.com.py
+SMTP Port: 465
+IMAP, POP3 y SMTP require authentication.

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Rent a Car WM | Pedido</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alquiler y renta de vehículos en Paraguay. Encuentra autos económicos y de lujo para alquilar en Rent a Car WM. ¡Renta un auto con facilidad y seguridad!">
+    <meta name="keywords" content="alquiler de vehículos, renta de autos, alquiler de autos, renta de vehículos, autos en Paraguay, Rent a Car WM, alquiler de autos en Paraguay">
+    <meta name="author" content="Rent a Car WM">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.rentacarwm.com.py/favicon.ico" type="image/x-icon">
+
+
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!--Main -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!--<link href="assets/css/styles_coti.css" rel="stylesheet">-->
+    <link href="assets/css/styles.css" rel="stylesheet">
+
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <!--<link href="assets/css/styles_coti.css" rel="stylesheet">-->
+    
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Contenedor principal */
+        .pedido-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 20px auto;
+            gap: 20px;
+            padding: 20px;
+            background: #f7f9fc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Formulario */
+        .form-container {
+            flex: 1 1 60%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .form-container input,
+        .form-container select,
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            background: orange;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background: red;
+        }
+
+        /* Detalles del auto */
+        .car-details-container {
+            flex: 1 1 35%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .car-details-container h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #333;
+            text-align: center;
+        }
+
+        .car-details-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .car-details {
+            list-style: none;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .car-details li {
+            margin-bottom: 8px;
+        }
+
+        .car-details li strong {
+            color: #333;
+        }
+        
+
+        .total-price {
+        color: red;
+        background-color: #fff;
+        padding: 2px;
+        border-radius: 8px;
+        }
+        .total-price1 {
+        color: orange;
+        background-color: #fff;
+        padding: 2px;
+        border-radius: 8px;
+        }
+        .content {
+    height: 2000px; /* Esto es para crear suficiente espacio para el desplazamiento */
+}
+
+.scrollToTopBtn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    display: none; /* Inicialmente oculto */
+    transition: opacity 0.3s;
+}
+
+.titulo_lindito {
+                width: 100%;
+                background-color:;
+            }
+            
+            .cabecera_OK {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                padding: 10px 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+                border-radius: 15px; /* Bordes redondeados */
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para resaltar */
+                
+            }
+            
+            .titulo_texto {
+                font-size: 31px;
+                color: orangered;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                white-space: nowrap; /* Evita saltos de línea */
+                text-decoration: none; /* Sin subrayado */
+            }
+            
+            .logo_imagen {
+                height: 50px;
+                margin-left: auto; /* Alinea la imagen a la derecha */
+            }
+            /* Boton ir al inicio */
+        .floating-button {
+    position: fixed; /* Fijo para que esté siempre visible */
+    bottom: 70px; /* Distancia desde la parte inferior */
+    right: 20px; /* Distancia desde el lado derecho */
+    background-color: red; /* Color de fondo rojo */
+    color: white; /* Color del texto */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para el efecto flotante */
+    font-size: 13px; /* Tamaño de fuente */
+    transition: background 0.3s; /* Transición suave para el color de fondo */
+}
+
+.floating-button:hover {
+    color: red;
+    background-color: rgb(255, 255, 255); /* Color de fondo al pasar el mouse */
+}
+
+/* Mostrar el botón cuando el usuario hace scroll hacia abajo */
+.scrollToTopBtn.show {
+    display: block;
+}
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pedido-container {
+                flex-direction: column;
+            }
+
+            .form-container, .car-details-container {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div class="titulo_lindito">
+        <div class="cabecera_OK">
+            <div class="titulo_texto">Formulario</div>
+            <img src="assets/img/WMLogo.png" alt="WM Logo" class="logo_imagen">
+        </div>
+        <br>
+        <div>
+            <a href="index.html">Inicio/</a>
+            <a href="results.html">Cotización/</a>
+            <a href="pedido.html">Formulario/</a>
+          
+
+        </div>
+    </div>
+
+<div class="pedido-container">
+    
+    <!-- Formulario de reserva -->
+    <div class="form-container">
+        <div style="text-align: center; color: orange; text-decoration: underline;">
+            <h4>Campos Obligatorios</h4><br>
+        </div>
+        <div style="text-align: center; background-color: orangered; padding: 5px; color: white; font-weight: bold; border-radius: 8px;">Detalles del Cliente</div>
+        <br>
+        <form onsubmit="event.preventDefault(); submitReservation();">
+            <label for="name">Nombre y Apellido:</label>
+            <div style=" font-size: 11px;">(Ej: Juan Pérez)</div>
+            <input 
+    type="text" 
+    id="name" 
+    name="name" 
+    required 
+    placeholder="Ingrese su Nombre y Apellido"
+    pattern="^[A-Za-záéíóúÁÉÍÓÚñÑ]+(\s[A-Za-záéíóúÁÉÍÓÚñÑ]+)*$"
+    title="Debe ingresar un nombre y apellido válidos, incluyendo nombres compuestos"
+>
+    
+            <!-- Nuevo campo para Celular -->
+            <label for="phone">Celular:</label>
+            <div style=" font-size: 11px;">(Sin espacios o comas. Ej: 0981123456)</div>
+            <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                required 
+                placeholder="Ingrese su número de celular"
+                pattern="^\d{10}$" 
+                title="El celular debe contener 10 dígitos sin espacios ni guiones (Ej.: 0981123456)"
+            >
+    
+            <label for="payment">Forma de Pago:</label>
+            <div style=" font-size: 11px;">(Elija una opción)</div>
+            <select id="payment" name="payment" required>
+                <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+                <option value="Dinero en Efectivo">Dinero en Efectivo</option>
+            </select>
+    
+            <button type="submit">Enviar Reserva</button>
+        </form>
+    <br><br><br>
+        
+    
+    
+    </div>
+    
+    
+
+    
+<!-- Detalles del auto -->
+<div class="car-details-container">
+    <div style="text-align: center; color: orange; text-decoration: underline;">
+        <h4>Vehículo Elegido:</h4>
+    </div>
+    <br>
+    <div style="text-align: center; background-color: orangered; padding: 5px; color: white; font-weight: bold; border-radius: 8px;">Detalles del Vehículo</div>
+    <img id="carImage" alt="Imagen del vehículo" />
+    <ul class="car-details">
+        <li><strong>Nombre del vehículo:</strong> <span id="carName"></span></li>
+        <li><strong>Pasajeros:</strong> <span id="passengers"></span></li>
+        <li><strong>Colores:</strong> <span id="colors"></span></li>
+        <li><strong>Transmisión:</strong> <span id="transmission"></span></li>
+        <li><strong>Motor:</strong> <span id="motor"></span></li>
+        <li><strong>Combustible:</strong> <span id="fuel"></span></li>
+        <li><strong>Aire Acondicionado:</strong> <span id="ac"></span></li>
+        <li><strong>Radio Bluetooth:</strong> <span id="radio"></span></li>
+    </ul>
+    <div style="text-align: center; background-color: orangered; padding: 5px; color: white; font-weight: bold; border-radius: 8px;">Detalles del Alquiler</div>
+    <ul class="car-details">
+        <li><strong>Garantía:</strong> <span id="warranty"></span></li>
+        <li><strong>Precio por Día:</strong> <span id="pricePerDay"></span></li>
+        <li><strong>Días Alquilados:</strong> <span id="rentalDays"></span></li>
+        <li><strong>Fecha de Retiro:</strong> <span id="pickupDate"></span></li>
+        <li><strong>Fecha de Entrega:</strong> <span id="returnDate"></span></li>
+        <li><strong>Tipo de Tarifa:</strong> <span id="pricingType"></span></li>
+        <li>
+            <strong>Sub total:</strong>
+            <div class="total-price1">
+                <span id="totalPriceWithoutWarranty"></span>
+            </div>
+        </li>
+        <li>
+            <strong>Total con Garantía:</strong>
+            <div class="total-price">
+                <span id="totalPrice"></span>
+            </div>
+        </li>
+    </ul>
+</div>
+</div>
+
+
+
+
+  <section id="contact" class="contact">
+                <div class="container" data-aos="fade-up">
+
+                    <div class="section-title">
+                        <h2>Contacto</h2>
+                    </div>
+
+                    <div class="row mt-1 d-flex justify-content-end" data-aos="fade-right" data-aos-delay="100">
+
+                        <div class="col-lg-5">
+                            <div class="info">
+                                <div class="address">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <h4>Dirección:</h4>
+                                    <p>San Miguel Esq. Feliciando Duarte - San Lorenzo</p>
+                                </div>
+
+                                <div class="email">
+                                    <i class="bi bi-envelope"></i>
+                                    <h4>Correo:</h4>
+                                    <p>reservas@rentacarwn.com.py</p>
+                                </div>
+
+                                <div class="phone">
+                                    <i class="bi bi-phone"></i>
+                                    <h4>Celular:</h4>
+                                    <p>0983 496 378</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="100">
+
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3780.850465541043!2d-57.53274322461477!3d-25.301776677643765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDE4JzA2LjQiUyA1N8KwMzEnNDguNiJX!5e1!3m2!1sen!2spy!4v1728036010897!5m2!1sen!2spy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section><!-- End Contact Section -->
+
+<footer id="footer">
+
+
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright 2024 <strong><span>Rent a Car - WM </span></strong> Derechos Reservados.
+            </div>
+            <div class="credits">
+                
+                Designed by <a href="https://elvitoca.github.io/VC-Web-Designer/">VC Web Designer 2024</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="index.html" class="floating-button">Ir al inicio</a>
+ 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Obtener los datos del auto desde localStorage
+        const carData = JSON.parse(localStorage.getItem("selectedCarData"));
+
+        if (!carData) {
+            document.body.innerHTML = "<p>No se encontraron datos del vehículo seleccionado.</p>";
+            return;
+        }
+
+        // Llenar los detalles del auto
+        document.getElementById("carImage").src = carData.image;
+        document.getElementById("carName").textContent = carData.name;
+        document.getElementById("passengers").textContent = carData.passengers;
+        document.getElementById("colors").textContent = carData.colors.join(", ");
+        document.getElementById("transmission").textContent = carData.transmission;
+        document.getElementById("motor").textContent = carData.motor;
+        document.getElementById("fuel").textContent = carData.fuel;
+        document.getElementById("ac").textContent = carData.ac;
+        document.getElementById("radio").textContent = carData.radio;
+
+        // Llenar los detalles del alquiler
+        document.getElementById("warranty").textContent = carData.warranty;
+        document.getElementById("pricePerDay").textContent = carData.price;
+        document.getElementById("rentalDays").textContent = carData.rentalDays;
+        document.getElementById("pickupDate").textContent = carData.pickupDate;
+        document.getElementById("returnDate").textContent = carData.returnDate;
+        document.getElementById("pricingType").textContent =
+            carData.pricingType === "limited"
+                ? "Precio por km limitado (120 km diarios)"
+                : "Precio por km libre";
+        document.getElementById("totalPriceWithoutWarranty").textContent = carData.totalPriceWithoutWarranty;
+        document.getElementById("totalPrice").textContent = carData.totalPriceWithWarranty;
+    });
+
+    function submitReservation() {
+    // Obtener valores del formulario
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const payment = document.getElementById("payment").value;
+
+    // Validar que los datos estén completos
+    if (!name || !phone || !payment) {
+        alert("Por favor complete todos los campos del formulario.");
+        return;
+    }
+
+    // Obtener detalles del auto desde LocalStorage
+    const carData = JSON.parse(localStorage.getItem("selectedCarData"));
+
+    if (!carData) {
+        alert("No se encontraron datos del vehículo. Por favor, regrese y seleccione un auto.");
+        return;
+    }
+
+    // Crear un objeto con los datos del formulario y los detalles del auto
+    const reservationData = {
+        car: {
+            name: carData.name,
+            image: carData.image,
+            passengers: carData.passengers,
+            colors: carData.colors,
+            transmission: carData.transmission,
+            motor: carData.motor,
+            fuel: carData.fuel,
+            ac: carData.ac,
+            radioBT: carData.radio,
+            pricePerDay: carData.price, // Precio por día
+            rentalDays: carData.rentalDays,    // Días alquilados
+            pickupDate: carData.pickupDate,    // Fecha de Retiro
+            returnDate: carData.returnDate,    // Fecha de Entrega
+            pricingType: carData.pricingType,  // Tarifa
+            warranty: carData.warranty,        // Garantía
+            totalPriceWithWarranty: carData.totalPriceWithWarranty,  // Total con garantía
+            totalPriceWithoutWarranty: carData.totalPriceWithoutWarranty, // Total sin garantía
+        },
+        customer: {
+            name,
+            phone,
+            payment,
+        },
+    };
+
+    // Guardar los datos en LocalStorage
+    localStorage.setItem("reservationData", JSON.stringify(reservationData));
+
+    // Redirigir a la página de confirmación
+    window.location.href = "reserva_confirm.html";
+}
+// Escuchar el evento del botón "Reservar"
+document.addEventListener("DOMContentLoaded", function () {
+const reserveButton = document.getElementById("reserveButton");
+reserveButton.addEventListener("click", submitReservation);
+});
+</script>
+
+        
+
+    <!--Botón-->
+<script>
+    // Obtener el botón
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+// Mostrar el botón cuando se hace scroll hacia abajo
+window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollToTopBtn.classList.add('show');
+    } else {
+        scrollToTopBtn.classList.remove('show');
+    }
+};
+
+// Hacer que el botón lleve al principio de la página cuando se hace clic
+scrollToTopBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+</script>
+
+
+ <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, orangered, orange);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: orangered;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        button:hover {
+            background-color: red;
+        }
+        .message {
+            color: red;
+            margin-top: 15px;
+        }
+        .titulo_lindito {
+            width: 100%;
+            background-color: ;
+        }
+
+        .cabecera_OK {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 10px 20px;
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 15px;
+            /* Bordes redondeados */
+            
+            /* Sombra ligera para resaltar */
+
+        }
+
+        .titulo_texto {
+            font-size: 31px;
+            color: orangered;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            /* Evita saltos de línea */
+            text-decoration: none;
+            /* Sin subrayado */
+        }
+
+        .logo_imagen {
+            height: 100px;
+            text-align: center;
+            /* Alinea la imagen a la derecha */
+        }
+    </style>
+</head>
+<body>
+    
+<div class="login-container">
+    <div class="titulo_lindito">
+        <div class="cabecera_OK">
+            <div class="titulo_texto"></div>
+            <img src="../assets/img/WMLogo.png" alt="WM Logo" class="logo_imagen">
+        </div>
+        
+    
+    </div>
+    <h2>Panel de Control</h2>
+    <h3>Iniciar Sesión</h3>
+    <form id="loginForm">
+        <label>Nombre de Usuario:</label><br>
+        <input type="text" id="username" required placeholder="Ingrese su nombre de usuario"><br>
+        <label>Contraseña:</label><br>
+        <input type="password" id="password" required placeholder="Ingrese su contraseña"><br>
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+    <div id="message" class="message"></div>
+</div>
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Usuarios predefinidos
+    const users = {
+        "Jefe": "jefe123",
+        "Administrador": "admin123"
+    };
+
+    // Verificar las credenciales
+    if (users[username] && users[username] === password) {
+        window.location.href = 'welcome_menu.html';
+    } else {
+        document.getElementById('message').textContent = 'Nombre de usuario o contraseña incorrectos.';
+    }
+});
+</script>
+
+</body>
+</html>

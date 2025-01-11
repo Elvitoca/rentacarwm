@@ -1,0 +1,262 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 600px; /* Cambiado a 600px */
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 40%;
+    background: orange;
+    border-radius: 10px;
+    border-color: white;
+    color: white;
+    flex: 1;
+    margin: 5px;
+    padding: 5px 5px;
+}
+
+/* Ajustando el botón a tamaño de contenido */
+.modal-content button {
+    width: 15%;
+    flex: 1;
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px 0px;
+}
+
+button:hover {
+    background-color: red;
+}
+
+
+.reserva_boton button {
+    width: 40%;
+    background: orange;
+    border-radius: 10px;
+    border-color: white;
+    color: white;
+    flex: 1;
+    margin: 5px;
+    padding: 5px 5px;
+    
+}
+
+/* Ajustando el botón a tamaño de contenido */
+.reserva_boton button {
+    width: 15%;
+    flex: 1;
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px 0px;
+}
+
+.reserva_boton button:hover {
+    background-color: red;
+}
+
+/* Estilo para centrar el formulario emergente */
+.modal-content {
+    display: block;
+    background: red;
+    color: white;
+    text-align: center;
+    width: 800px;
+    padding: 20px;
+    position: fixed; /* Fijo para que esté sobre la página */
+    top: 50%; /* Mueve al centro vertical */
+    left: 50%; /* Mueve al centro horizontal */
+    transform: translate(-50%, -50%); /* Ajusta el desplazamiento para centrar completamente */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.modal-content input {
+    width: 400px;
+}
+
+.button-container {
+    display: flex; /* Flex para botones alineados horizontalmente */
+    justify-content: space-between; /* Espacio entre botones */
+    margin-top: 15px;
+}
+
+.results-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Estilo base de la tarjeta */
+.car-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    max-width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Para que el pseudo-elemento no se salga de los bordes */
+    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Pseudo-elemento para desenfocar el fondo */
+.car-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit; /* Hereda el fondo para simular el desenfoque */
+    filter: blur(5px); /* Desenfoque */
+    z-index: -1; /* Detrás del contenido */
+    transition: opacity 0.3s ease; /* Suaviza la aparición */
+    opacity: 0; /* Oculto por defecto */
+}
+
+/* Efecto hover */
+.car-card:hover {
+    transform: scale(1.03); /* Aumento del tamaño al 3% */
+    background: linear-gradient(135deg, rgba(211, 211, 211, 0.8), rgba(240, 240, 240, 0.8));
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Muestra el desenfoque al hacer hover */
+.car-card:hover::before {
+    opacity: 1;
+}
+
+
+
+.car-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.car-description {
+    font-size: 12px; /* Tamaño de la fuente */
+     /* Alineación a la izquierda */
+    list-style-type: disc; /* Viñetas */
+    padding-left: 20px; /* Espaciado de las viñetas */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.car-details {
+    list-style-type: none;
+    list-style-position: inside;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 11px; /* Tamaño de la fuente */
+    text-align: left;
+}
+
+.car-details li {
+    border-bottom: 1px solid #ddd; /* Línea horizontal fina */
+    padding: 5px 0; /* Espaciado entre las líneas */
+}
+
+.car-details li:last-child {
+    border-bottom: none; /* Elimina la línea en el último elemento */
+}
+
+
+.car-details li {
+    margin-bottom: 8px;
+    padding-left: 10px;
+}
+.contact-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.price-info {
+    color: #000000;
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.total-price {
+    font-size: 1.3em;
+    color: red;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.total-price1 {
+    font-size: 1.3em;
+    color: orange;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.contact-link:hover {
+    background-color: #218838;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: #ff9800;
+    color: #ffffff;
+}
+
+.results-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.results-title h2 {
+    font-size: 1.8em;
+    margin: 0;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .car-card {
+        width: 100%;
+    }
+}

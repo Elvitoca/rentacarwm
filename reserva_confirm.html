@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a Car WM | Reserva</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.rentacarwm.com.py/favicon.ico" type="image/x-icon">
+    <!-- Favicons -->
+ 
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!--Main -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contenedor {
+            position: relative;
+            /* Permitir posicionar elementos absolutos dentro */
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            /* Ajusta según sea necesario */
+            right: 20px;
+            /* Ajusta según sea necesario */
+            width: 10%;
+            /* Cambia el tamaño al 50% del original */
+            height: auto;
+            /* Mantiene la proporción de aspecto */
+            max-width: 210px;
+            /* Limitar el ancho máximo si es necesario */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            /* Tamaño por defecto para pantallas grandes */
+            text-align: center;
+            /* Centra el texto si es necesario */
+            margin: 1rem 0;
+            /* Espaciado alrededor del h1 */
+        }
+
+        .reservation-details {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .reservation-details h3 {
+            background-color: orangered;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+            /* Remover el borde en la última fila */
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: black;
+
+        }
+
+        .detail-value {
+            color: #333;
+            text-align: right;
+            flex-grow: 1;
+        }
+
+        .car-image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .total {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: red;
+            text-align: right;
+            padding: 10px 0;
+        }
+        .total1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: orange;
+            text-align: right;
+            padding: 10px 0;
+        }
+
+        .info-container {
+            background-image: url('path/to/your/car-image.jpg');
+            /* Cambia la ruta a tu imagen */
+            background-size: cover;
+            /* Para que la imagen cubra todo el contenedor */
+            background-position: center;
+            /* Centra la imagen */
+            position: relative;
+            /* Para el pseudo-elemento */
+            padding: 20px;
+            /* Espacio interno */
+            color: #ffffff;
+            /* Color del texto */
+            text-align: center;
+            /* Centra el texto */
+            border-radius: 10px;
+            /* Bordes redondeados */
+            margin: 20px;
+            /* Margen alrededor del contenedor */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* Sombra para darle profundidad */
+        }
+
+        .info-container::before {
+            content: '';
+            position: absolute;
+            /* Posiciona el pseudo-elemento */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            /* Degradado negro al 60% */
+            border-radius: 10px;
+            /* Asegúrate de que los bordes coincidan */
+            z-index: 1;
+            /* Asegúrate de que esté detrás del texto */
+        }
+
+        .titulo_lindito {
+                width: 100%;
+               
+            }
+            
+            .cabecera_OK {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                padding: 10px 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+                border-radius: 15px; /* Bordes redondeados */
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para resaltar */
+                
+            }
+            
+            .titulo_texto {
+                font-size: 31px;
+                color: orangered;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                white-space: nowrap; /* Evita saltos de línea */
+                text-decoration: none; /* Sin subrayado */
+            }
+            
+            .logo_imagen {
+                height: 50px;
+                margin-left: auto; /* Alinea la imagen a la derecha */
+            }
+           /* Boton ir al inicio */
+        .floating-button {
+    position: fixed; /* Fijo para que esté siempre visible */
+    bottom: 70px; /* Distancia desde la parte inferior */
+    right: 20px; /* Distancia desde el lado derecho */
+    background-color: red; /* Color de fondo rojo */
+    color: white; /* Color del texto */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para el efecto flotante */
+    font-size: 13px; /* Tamaño de fuente */
+    transition: background 0.3s; /* Transición suave para el color de fondo */
+}
+.floating-button:hover {
+    color: red;
+    background-color: rgb(255, 255, 255); /* Color de fondo al pasar el mouse */
+}
+        /* Media Queries para Responsividad */
+        @media (max-width: 600px) {
+            .detail-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .detail-row span {
+                text-align: left;
+            }
+
+            .total {
+                font-size: 1.5em;
+            }
+
+            .contenedor {
+                padding: 10px;
+            }
+
+            .logo {
+                max-width: 105px;
+                /* Ajuste de logo para móviles */
+            }
+        }
+
+        /* Ajustes para pantallas pequeñas */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.rem;
+                /* Tamaño más pequeño para dispositivos móviles */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.0rem;
+                /* Tamaño aún más pequeño para pantallas muy pequeñas */
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <div class="titulo_lindito">
+        <div class="cabecera_OK">
+            <div class="titulo_texto">Reserva</div>
+            <img src="assets/img/WMLogo.png" alt="WM Logo" class="logo_imagen">
+        </div>
+        <br>
+        <div>
+            <a href="index.html">Inicio/</a>
+            <a href="results.html">Cotización/</a>
+            <a href="pedido.html">Formulario/</a>
+            <a href="reserva_confirm.html">Reserva</a>
+
+        </div>
+    </div>
+    <br>
+
+    <div class="contenedor">
+        <br>
+        <div class="reservation-details">
+            <h3>Detalles del Cliente</h3>
+            <div class="detail-row">
+                <span class="detail-label">Nombre y Apellido:</span>
+                <span class="detail-value" id="reservationName"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Celular:</span>
+                <span class="detail-value" id="reservationPhone"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Forma de Pago:</span>
+                <span class="detail-value" id="reservationPayment"></span>
+            </div>
+    
+            <h3>Detalles del Vehículo</h3>
+            <div class="detail-row">
+                <span class="detail-label">Vehículo:</span>
+                <span class="detail-value" id="reservationCarName"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Pasajeros:</span>
+                <span class="detail-value" id="reservationPassengers"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Colores:</span>
+                <span class="detail-value" id="reservationColors"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Transmisión:</span>
+                <span class="detail-value" id="reservationTransmission"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Motor:</span>
+                <span class="detail-value" id="reservationMotor"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Combustible:</span>
+                <span class="detail-value" id="reservationFuel"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Aire Acondicionado:</span>
+                <span class="detail-value" id="reservationAC"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Radio Bluetooth:</span>
+                <span class="detail-value" id="reservationRadio"></span>
+            </div>
+            <h3>Detalles del Alquiler</h3>
+            <div class="detail-row">
+                <span class="detail-label">Garantía:</span>
+                <span class="detail-value" id="reservationWarranty"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Precio por Día:</span>
+                <span class="detail-value" id="reservationPricePerDay"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Días Alquilados:</span>
+                <span class="detail-value" id="reservationRentalDays"></span>
+            </div>
+            <!-- Nueva sección para fechas de retiro y entrega -->
+            <div class="detail-row">
+                <span class="detail-label">Fecha de Retiro:</span>
+                <span class="detail-value" id="reservationPickupDate"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Fecha de Entrega:</span>
+                <span class="detail-value" id="reservationReturnDate"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Tarifa:</span>
+                <span class="detail-value" id="reservationPricingType"></span>
+            </div>
+            <!-- Nuevo campo Total sin garantía -->
+            <div class="detail-row">
+                <span class="detail-label">Sub total:</span>
+                <span class="detail-value total1" id="reservationTotalNoWarranty"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Total con Garantía:</span>
+                <span class="detail-value total" id="reservationTotalPrice"></span>
+            </div>
+            
+        </div>
+        <div class="car-image-container">
+            <img id="carImage" src="" alt="Imagen del vehículo">
+        </div>
+        <br>
+        <div style="text-align: center; padding: 1em; font-size: 18px; width: 20em; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <button id="generate-wht" onclick="generateWHT()" 
+            style="text-shadow: 
+            1px 1px 0px black, 
+            -1px -1px 0px black,
+            1px -1px 0px black, 
+            -1px 1px 0px black; background-color: rgb(68, 255, 0); color: white; border: 1px solid grey; border-radius: 10px; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s; font-size: 14px;"
+            onmouseover="this.style.backgroundColor='red';"
+            onmouseout="this.style.backgroundColor=' rgb(68, 255, 0)';">
+            WhatsApp
+            </button>
+            <br>
+            <button id="send-email" onclick="sendEmail()" 
+            style="text-shadow: 
+            1px 1px 0px black, 
+            -1px -1px 0px black,
+            1px -1px 0px black, 
+            -1px 1px 0px black;  background-color: orange; color: white; border: 1px solid grey; border-radius: 10px; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s; font-size: 14px;"
+            onmouseover="this.style.backgroundColor='red';"
+            onmouseout="this.style.backgroundColor='orange';">
+            Enviar correo
+            </button>
+            <br>
+            <button id="generate-pdf" onclick="generatePDF()" 
+            style="text-shadow: 
+            1px 1px 0px black, 
+            -1px -1px 0px black,
+            1px -1px 0px black, 
+            -1px 1px 0px black;  background-color: rgb(122, 122, 122); color: white; border: 1px solid grey; border-radius: 10px; padding: 10px 20px; cursor: pointer; transition: background-color 0.3s; font-size: 14px;"
+            onmouseover="this.style.backgroundColor='red';"
+            onmouseout="this.style.backgroundColor='rgb(122, 122, 122)';">
+            Generar PDF
+            </button>
+            <br>
+            
+            <label>
+            <input type="checkbox" id="accept-terms" required>
+            <br><br>
+            He leído y acepto los <a href="term_condic.html" target="_blank">Términos y condiciones</a>
+            </label>
+            <br><br>
+           
+            <br>
+        </div>
+    </div>
+    
+    
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="index.html" class="floating-button">Ir al inicio</a>
+    
+    
+<!-- Datos de localstore--> 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    // Obtener los datos de la reserva desde localStorage
+    const reservationData = JSON.parse(localStorage.getItem("reservationData"));
+
+    if (!reservationData) {
+        document.body.innerHTML = "<p>No se encontraron datos de la reserva.</p>";
+        return;
+    }
+
+    // Llenar los detalles del cliente y del vehículo
+    document.getElementById("reservationName").textContent = reservationData.customer?.name || "N/A";
+    document.getElementById("reservationPhone").textContent = reservationData.customer?.phone || "N/A";
+    document.getElementById("reservationPayment").textContent = reservationData.customer?.payment || "N/A"; // Nuevo código
+    document.getElementById("reservationCarName").textContent = reservationData.car?.name || "N/A";
+    document.getElementById("reservationPassengers").textContent = reservationData.car?.passengers || "N/A";
+    document.getElementById("reservationColors").textContent = reservationData.car?.colors?.join(", ") || "N/A";
+    document.getElementById("reservationTransmission").textContent = reservationData.car?.transmission || "N/A";
+    document.getElementById("reservationMotor").textContent = reservationData.car?.motor || "N/A";
+    document.getElementById("reservationFuel").textContent = reservationData.car?.fuel || "N/A";
+    document.getElementById("reservationAC").textContent = reservationData.car?.ac || "N/A";
+    document.getElementById("reservationRadio").textContent = reservationData.car?.radioBT || "N/A";
+    document.getElementById("reservationWarranty").textContent = reservationData.car?.warranty !== undefined ? reservationData.car.warranty : "N/A";
+    document.getElementById("reservationPricePerDay").textContent = reservationData.car?.pricePerDay !== undefined ? reservationData.car.pricePerDay : "N/A";
+    document.getElementById("reservationRentalDays").textContent = reservationData.car?.rentalDays || "N/A";
+    document.getElementById("reservationPickupDate").textContent = reservationData.car?.pickupDate || "N/A";
+    document.getElementById("reservationReturnDate").textContent = reservationData.car?.returnDate || "N/A";
+    document.getElementById("reservationPricingType").textContent = reservationData.car?.pricingType === "limited" ? "Precio por km limitado (120 km diarios)" : "Precio por km libre";
+    document.getElementById("reservationTotalPrice").textContent = reservationData.car?.totalPriceWithWarranty !== undefined ? reservationData.car.totalPriceWithWarranty : "N/A";
+    document.getElementById("reservationTotalNoWarranty").textContent = reservationData.car?.totalPriceWithoutWarranty !== undefined ? reservationData.car.totalPriceWithoutWarranty : "N/A";
+
+    // Mostrar la imagen del vehículo
+    const carImage = document.getElementById("carImage");
+    carImage.src = reservationData.car?.image || "ruta_predeterminada_a_imagen.jpg";
+});
+
+function formatDate(date) {
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' };
+    return date.toLocaleDateString('es-ES', options);
+}
+</script>
+
+<!--Generar Mensaje de Whatsapp-->
+
+<script>
+    function generateWHT() {
+    // Verificar si se han aceptado los términos y condiciones
+    const acceptTerms = document.getElementById("accept-terms");
+    if (!acceptTerms.checked) {
+        alert("Por favor, acepta los Términos y Condiciones antes de continuar.");
+        return;
+    }
+
+    // Obtener los datos de la reserva desde localStorage
+    const reservationData = JSON.parse(localStorage.getItem("reservationData"));
+
+    if (!reservationData) {
+        alert("No se encontraron datos de la reserva.");
+        return;
+    }
+
+    // Formatear el mensaje de WhatsApp
+    let message = "Hola Rent a Car WM! Me interesa alquilar este auto con los siguientes detalles:\n\n";
+
+    // Detalles del Cliente
+    message += "--- DETALLES DEL CLIENTE ---\n";
+    message += "Nombre y Apellido: " + reservationData.customer?.name + "\n";
+    message += "Celular: " + reservationData.customer?.phone + "\n";
+    message += "Forma de Pago: " + (reservationData.customer?.payment || "N/A") + "\n\n";
+
+    // Detalles del Vehículo
+    message += "--- DETALLES DEL VEHÍCULO ---\n";
+    message += "Vehículo: " + reservationData.car?.name + "\n";
+    message += "Pasajeros: " + (reservationData.car?.passengers || "N/A") + "\n";
+    message += "Colores: " + (reservationData.car?.colors?.join(", ") || "N/A") + "\n";
+    message += "Transmisión: " + (reservationData.car?.transmission || "N/A") + "\n";
+    message += "Motor: " + (reservationData.car?.motor || "N/A") + "\n";
+    message += "Combustible: " + (reservationData.car?.fuel || "N/A") + "\n";
+    message += "Aire Acondicionado: " + (reservationData.car?.ac || "N/A") + "\n";
+    message += "Radio Bluetooth: " + (reservationData.car?.radioBT || "N/A") + "\n\n";
+
+    // Detalles del Alquiler
+    message += "--- DETALLES DEL ALQUILER ---\n";
+    message += "Garantía: " + (reservationData.car?.warranty !== undefined ? reservationData.car.warranty : "N/A") + "\n";
+    message += "Precio por Día: " + (reservationData.car?.pricePerDay !== undefined ? reservationData.car.pricePerDay : "N/A") + "\n";
+    message += "Días Alquilados: " + (reservationData.car?.rentalDays || "N/A") + "\n";
+    message += "Fecha de Retiro: " + (reservationData.car?.pickupDate || "N/A") + "\n";
+    message += "Fecha de Entrega: " + (reservationData.car?.returnDate || "N/A") + "\n";
+    message += "Tarifa: " + (reservationData.car?.pricingType === "limited" ? "Precio por km limitado (120 km diarios)" : "Precio por km libre") + "\n";
+    message += "Sub total: " + (reservationData.car?.totalPriceWithoutWarranty !== undefined ? reservationData.car.totalPriceWithoutWarranty : "N/A") + "\n";
+    message += "Total con Garantía: " + (reservationData.car?.totalPriceWithWarranty !== undefined ? reservationData.car.totalPriceWithWarranty : "N/A") + "\n\n";
+
+    message += "¿Puedo contar con la reserva de este vehículo? Gracias.";
+
+    // Generar el enlace de WhatsApp con el mensaje
+    const phoneNumbers = ["595981484683"]; // Números de Paraguay con prefijo 595
+    const whatsAppUrl = phoneNumbers.map(number => `https://wa.me/${number}?text=${encodeURIComponent(message)}`).join(" ");
+
+    // Abrir el enlace de WhatsApp en una nueva pestaña
+    window.open(whatsAppUrl, "_blank");
+}
+</script>
+
+<!--Script para confirmar terminos y condiciones-->
+
+<script>
+    document.getElementById("contract-button").addEventListener("click", function (event) {
+        // Verificar si se han aceptado los términos y condiciones
+        const acceptTerms = document.getElementById("accept-terms");
+        if (!acceptTerms.checked) {
+            alert("Por favor, acepta los Términos y Condiciones antes de continuar.");
+            return;
+        }
+
+        // Redirigir al contrato si se aceptaron los términos
+        window.location.href = "contrato_alquiler.html";
+    });
+</script>
+
+<!-- Generar PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<!--Generar PDF descarga el Usuario-->   
+
+<script>
+        function formatDate(date) {
+            const options = {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            };
+            return date.toLocaleString('es-ES', options);
+        }
+    
+        function generatePDF() {
+  if (!document.getElementById('accept-terms').checked) {
+    alert('Por favor, acepta los Términos y condiciones.');
+    return;
+  }
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  // Cargar y agregar logotipo 
+  const logo = new Image();
+  logo.src = 'assets/img/WMLogo.png'; // Verifica que la ruta sea correcta
+  logo.onload = () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = logo.width;
+    canvas.height = logo.height;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(logo, 0, 0);
+
+    const dataURL = canvas.toDataURL('image/png');
+
+    const originalWidth = logo.width;
+    const originalHeight = logo.height;
+    const maxWidth = 50;
+    const maxHeight = 20;
+
+    let width = maxWidth;
+    let height = (originalHeight / originalWidth) * maxWidth;
+
+    if (height > maxHeight) {
+      height = maxHeight;
+      width = (originalWidth / originalHeight) * maxHeight;
+    }
+
+    doc.addImage(dataURL, 'PNG', 10, 10, width, height);
+
+    // Título del documento
+    doc.setFontSize(16);
+    doc.setFont("helvetica", "bold");
+    doc.text("Pedido de Alquiler RENT A CAR WM", 105, 20, {
+      align: "center"
+    });
+
+    // Detalles del cliente
+    doc.setFontSize(12);
+    doc.setTextColor(0);
+    doc.text("Detalles del Cliente", 10, 60);
+    doc.line(10, 62, 200, 62);
+    doc.text(`Nombre y Apellido: ${document.getElementById("reservationName").textContent}`, 10, 70);
+    doc.text(`Celular: ${document.getElementById("reservationPhone").textContent}`, 10, 80);
+
+    // Encabezado de la tabla
+    doc.setFontSize(12);
+    doc.setFont("helvetica", "bold");
+    doc.text("", 10, 90);
+    doc.text("Detalles del Servicio", 30, 90);
+    doc.text("Precio día", 140, 90);
+    doc.text("Valor", 180, 90);
+    doc.line(10, 92, 200, 92);
+
+    // Contenido de la tabla
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+    let startY = 100;
+
+    // Agregar Vehículo
+    doc.text("*", 10, startY);
+    doc.text(`Vehículo: ${document.getElementById("reservationCarName").textContent}`, 30, startY);
+    doc.text(`${document.getElementById("reservationPricePerDay").textContent}`, 140, startY);
+    doc.text(`${document.getElementById("reservationTotalPrice").textContent}`, 180, startY);
+    doc.line(10, startY + 2, 200, startY + 2);
+
+    startY += 10;
+
+    // Agregar Pasajeros
+    doc.text("*", 10, startY);
+    doc.text(`Pasajeros: ${document.getElementById("reservationPassengers").textContent}`, 30, startY);
+    doc.line(10, startY + 2, 200, startY + 2);
+
+    startY += 10;
+
+    // Agregar Colores
+    doc.text("*", 10, startY);
+    doc.text(`Colores: ${document.getElementById("reservationColors").textContent}`, 30, startY);
+    doc.line(10, startY + 2, 200, startY + 2);
+
+    startY += 10;
+
+    // Agregar Transmisión
+    doc.text("*", 10, startY);
+    doc.text(`Transmisión: ${document.getElementById("reservationTransmission").textContent}`, 30, startY);
+    doc.line(10, startY + 2, 200, startY + 2);
+
+    startY += 10;
+
+    // Agregar Motor
+    doc.text("*", 10, startY);
+    doc.text(`Motor: ${document.getElementById("reservationMotor").textContent}`, 30, startY);
+    doc.line(10, startY + 2, 200, startY + 2);
+
+    startY += 10;
+
+    // Agregar Combustible
+    doc.text("*", 10, startY);
+    doc.text(`Combustible: ${document.getElementById("reservationFuel").textContent}`, 30, startY);
+    doc.line(10, startY + 2, 200, startY + 2);
+
+    startY += 10;
+
+    // Agregar Aire Acondicionado
+    doc.text("*", 10, startY);
+    doc.text(`Aire Acondicionado: ${document.getElementById("reservationAC").textContent}`, 30, startY);
+    doc.line(10, startY + 2, 200, startY + 2);
+
+    startY += 10;
+
+    // Agregar Radio Bluetooth
+    doc.text("*", 10, startY);
+    doc.text(`Radio Bluetooth: ${document.getElementById("reservationRadio").textContent}`, 30, startY);
+    doc.line(10, startY + 2, 200, startY + 2);
+
+    startY += 10;
+
+    // Agregar Días de Alquiler
+    doc.text("*", 10, startY);
+    doc.text(`Días de Alquiler: ${document.getElementById("reservationRentalDays").textContent}`, 30, startY);
+    doc.line(10, startY + 2, 200, startY + 2);
+
+    startY += 10;
+
+    // Agregar Fechas de Retiro y Entrega
+    doc.text("*", 10, startY);
+    doc.text(`Fecha de Retiro: ${document.getElementById("reservationPickupDate").textContent}`, 30, startY);
+    startY += 10;
+    doc.text("*", 10, startY);
+    doc.text(`Fecha de Entrega: ${document.getElementById("reservationReturnDate").textContent}`, 30, startY);
+    doc.line(10, startY + 2, 200, startY + 2);
+
+    startY += 10;
+
+    // Agregar Tipo de Tarifa
+    doc.text("*", 10, startY);
+    doc.text(`Tipo de Tarifa: ${document.getElementById("reservationPricingType").textContent}`, 30, startY);
+    doc.line(10, startY + 2, 200, startY + 2);
+
+    startY += 10;
+
+    // Agregar Garantía
+    doc.text("*", 10, startY);
+    doc.text(`Garantía: ${document.getElementById("reservationWarranty").textContent}`, 30, startY);
+    doc.line(10, startY + 2, 200, startY + 2);
+
+    // Otros detalles (Fecha, forma de pago, total)
+    const currentDateTime = formatDate(new Date());
+    startY += 20;
+    doc.setFontSize(12);
+    doc.text(`Fecha: ${currentDateTime}`, 10, startY);
+    doc.text(`Forma de Pago: ${document.getElementById("reservationPayment").textContent}`, 10, startY + 10);
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+    doc.text(`SUB TOTAL GS: ${document.getElementById("reservationTotalNoWarranty").textContent}`, 140, startY + 20);
+    doc.text(`TOTAL C/GARANTÍA GS: ${document.getElementById("reservationTotalPrice").textContent}`, 140, startY + 30);
+
+    // Footer
+    const footerYStart = 280;
+    doc.setFontSize(8);
+    doc.setFont("helvetica", "normal");
+    doc.text("Rent a Car WM (c) 2024", 10, footerYStart);
+    doc.text("0983-496-378", 10, footerYStart + 5);
+    doc.text("reservas@rentacarwm.com.py", 10, footerYStart + 10);
+    doc.text("San Miguel Esq. Feliciando Duarte - San Lorenzo", 10, footerYStart + 15);
+
+    // Generar el nombre del archivo PDF
+    const reservationName = document.getElementById("reservationName").textContent;
+    const nombreArchivoPDF = `Reserva_Rent_a_Car_WM_${reservationName}.pdf`;
+
+    doc.save(nombreArchivoPDF);
+  };
+}
+
+
+</script>
+     
+<!-- Generar Correo -->
+<script>
+    function calcularTotalSinGarantia(precioPorDia, diasAlquilados) {
+        return precioPorDia * diasAlquilados; // Sin multiplicar por 1000
+    }
+
+    function formatearNumero(numero) {
+        return numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " gs"; // Formato con puntos y la unidad "gs"
+    }
+
+    function sendEmail() {
+        // Verificar si se aceptaron los términos y condiciones
+        if (!document.getElementById('accept-terms').checked) {
+            alert('Por favor, acepta los Términos y condiciones.');
+            return;
+        }
+
+        const email = "reservas@rentacarwm.com.py";
+        const subject = "Detalles de la Reserva Rent a Car WM";
+
+        // Obtener los datos de la reserva desde el HTML
+        const nombre = document.getElementById("reservationName").textContent;
+        const celular = document.getElementById("reservationPhone").textContent;
+        const formaPago = document.getElementById("reservationPayment").textContent;
+        const vehiculo = document.getElementById("reservationCarName").textContent;
+        const pasajeros = document.getElementById("reservationPassengers").textContent;
+        const colores = document.getElementById("reservationColors").textContent;
+        const transmision = document.getElementById("reservationTransmission").textContent;
+        const motor = document.getElementById("reservationMotor").textContent;
+        const combustible = document.getElementById("reservationFuel").textContent;
+        const aireAcondicionado = document.getElementById("reservationAC").textContent;
+        const radioBluetooth = document.getElementById("reservationRadio").textContent;
+        const garantia = parseFloat(document.getElementById("reservationWarranty").textContent.replace(/\./g, '').replace(/gs/g, '').trim());
+        const precioPorDia = parseFloat(document.getElementById("reservationPricePerDay").textContent.replace(/\./g, '').replace(/gs/g, '').trim());
+        const diasAlquilados = parseInt(document.getElementById("reservationRentalDays").textContent);
+        const fechaRetiro = document.getElementById("reservationPickupDate").textContent;
+        const fechaEntrega = document.getElementById("reservationReturnDate").textContent;
+        const tipoTarifa = document.getElementById("reservationPricingType").textContent;
+
+        // Calcular Total sin Garantía
+        const totalSinGarantia = calcularTotalSinGarantia(precioPorDia, diasAlquilados);
+        // Calcular Total con Garantía (añadiendo la garantía al total sin garantía)
+        const totalConGarantia = totalSinGarantia + (garantia);
+
+        // Cuerpo del correo con formato HTML y diseño profesional
+        const body = `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Pedido de Reserva Rent a Car WM</title>
+            <style>
+                .invoice-container {
+                text-align: left;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="invoice-container">
+                <div class="invoice-header">
+                    <h2>Pedido de Reserva Rent a Car WM</h2>
+                </div>
+
+                <div class="section-title">🧍 Detalles del Cliente:</div>
+                <table>
+                    <tr>
+                        <th>Nombre y Apellido:</th>
+                        <td>${nombre}</td>
+                    </tr>
+                    <tr>
+                        <th>Celular:</th>
+                        <td>${celular}</td>
+                    </tr>
+                    <tr>
+                        <th>Forma de Pago:</th>
+                        <td>${formaPago}</td>
+                    </tr>
+                </table>
+
+                <div class="section-title">🚗 Detalles del Vehículo:</div>
+                <table>
+                    <tr>
+                        <th>Vehículo:</th>
+                        <td>${vehiculo}</td>
+                    </tr>
+                    <tr>
+                        <th>Pasajeros:</th>
+                        <td>${pasajeros}</td>
+                    </tr>
+                    <tr>
+                        <th>Colores disponibles:</th>
+                        <td>${colores}</td>
+                    </tr>
+                    <tr>
+                        <th>Transmisión:</th>
+                        <td>${transmision}</td>
+                    </tr>
+                    <tr>
+                        <th>Motor:</th>
+                        <td>${motor}</td>
+                    </tr>
+                    <tr>
+                        <th>Combustible:</th>
+                        <td>${combustible}</td>
+                    </tr>
+                    <tr>
+                        <th>Aire Acondicionado:</th>
+                        <td>${aireAcondicionado}</td>
+                    </tr>
+                    <tr>
+                        <th>Radio Bluetooth:</th>
+                        <td>${radioBluetooth}</td>
+                    </tr>
+                    <tr>
+                        <th>Garantía:</th>
+                        <td>${formatearNumero(garantia)}</td>
+                    </tr>
+                </table>
+
+                <div class="section-title">📅 Detalles del Alquiler:</div>
+                <table>
+                    <tr>
+                        <th>Precio por Día:</th>
+                        <td>${formatearNumero(precioPorDia)}</td>
+                    </tr>
+                    <tr>
+                        <th>Días Alquilados:</th>
+                        <td>${diasAlquilados}</td>
+                    </tr>
+                    <tr>
+                        <th>Fecha de Retiro:</th>
+                        <td>${fechaRetiro}</td>
+                    </tr>
+                    <tr>
+                        <th>Fecha de Entrega:</th>
+                        <td>${fechaEntrega}</td>
+                    </tr>
+                    <tr>
+                        <th>Tipo de Tarifa:</th>
+                        <td>${tipoTarifa}</td>
+                    </tr>
+                </table>
+
+                <div class="total-price">
+                    <p><strong>Sub total:</strong> ${formatearNumero(totalSinGarantia)}</p>
+                    <p><strong>Total con Garantía:</strong> ${formatearNumero(totalConGarantia)}</p>
+                </div>
+
+                <div class="footer">
+                    <p>Rent a Car WM | Tel: 0983-496-378 | <a href="mailto:reservas@rentacarwm.com.py">reservas@rentacarwm.com.py</a><br>
+                    San Miguel Esq. Feliciando Duarte - San Lorenzo</p>
+                </div>
+            </div>
+        </body>
+        </html>
+        `;
+
+        // Enviar los datos al servidor para que este envíe el correo
+        fetch('enviar_correo.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                subject: subject,
+                body: body,
+                email: email
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Correo enviado correctamente.');
+            } else {
+                alert('Hubo un error al enviar el correo.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al intentar enviar el correo.');
+        });
+    }
+</script>
+
+
+
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>

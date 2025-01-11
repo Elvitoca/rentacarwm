@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrato con Reconocimiento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, orangered, orange);
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .vehicle-list a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .vehicle-list a:hover {
+            text-decoration: underline;
+        }
+        .contract-output {
+            margin-top: 30px;
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Contrato con Reconocimiento</h2>
+    <h3>Selecciona un Vehículo</h3>
+    <ul id="vehicleList" class="vehicle-list"></ul>
+
+    <form id="contractForm">
+        <h2>Datos del Arrendatario</h2>
+        
+        <div class="form-group">
+            <label for="fecha">Fecha:</label>
+            <input type="text" id="fecha" placeholder="Día/Mes/Año">
+        </div>
+        
+        <div class="form-group">
+            <label for="nombre">Nombre y Apellido del Arrendatario:</label>
+            <input type="text" id="nombre" placeholder="Ejemplo: Juan Pérez">
+        </div>
+
+        <div class="form-group">
+            <label for="cedula">Cédula de Identidad (Formato 123.456.789):</label>
+            <input type="text" id="cedula" placeholder="123.456.789">
+        </div>
+
+        <div class="form-group">
+            <label for="domicilio">Domicilio:</label>
+            <input type="text" id="domicilio" placeholder="Ejemplo: Calle 123, Barrio Centro">
+        </div>
+
+        <div class="form-group">
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" placeholder="Ciudad">
+        </div>
+
+        <div class="form-group">
+            <label for="celular">Celular:</label>
+            <input type="text" id="celular" placeholder="0981-123-456">
+        </div>
+
+        <div class="form-group">
+            <label for="monto">Monto en Guaraníes:</label>
+            <input type="text" id="monto" placeholder="Ejemplo: 1.000.000">
+        </div>
+
+        <div class="form-group">
+            <label for="fecha_retiro">Fecha de Retiro del Vehículo:</label>
+            <input type="text" id="fecha_retiro" placeholder="Día/Mes/Año">
+        </div>
+
+        <div class="form-group">
+            <label for="hora_retiro">Hora de Retiro:</label>
+            <input type="text" id="hora_retiro" placeholder="Ejemplo: 08:00 AM">
+        </div>
+
+        <div class="form-group">
+            <label for="fecha_devolucion">Fecha de Devolución:</label>
+            <input type="text" id="fecha_devolucion" placeholder="Día/Mes/Año">
+        </div>
+
+        <div class="form-group">
+            <label for="hora_devolucion">Hora de Devolución:</label>
+            <input type="text" id="hora_devolucion" placeholder="Ejemplo: 06:00 PM">
+        </div>
+
+        <div class="form-group">
+            <label for="km_tarifa">Kilometraje y Tarifa:</label>
+            <input type="text" id="km_tarifa" placeholder="Ejemplo: Ilimitado">
+        </div>
+
+        <div class="form-group">
+            <label for="dias_alquilados">Días Alquilados:</label>
+            <input type="text" id="dias_alquilados" placeholder="Ejemplo: 3">
+        </div>
+        <div class="form-group">
+            <label for="montoGarantia">Monto de la Garantía del Vehículo:</label>
+            <input type="number" id="montoGarantia" name="montoGarantia" required>
+        </div>
+        <div class="form-group">
+            <label for="montoFranquicia">Monto de la Franquicia de Seguro:</label>
+            <input type="number" id="montoFranquicia" name="montoFranquicia" required>
+        </div>
+        <div class="form-group">
+            <label for="montoAccidente">Cargo por Accidente USD:</label>
+            <input type="number" id="montoAccidente" placeholder="Ejemplo: 5000" required>
+        </div>
+        <div class="form-group">
+            <label for="aseguradora">Nombre de la Aseguradora:</label>
+            <input type="text" id="aseguradora" placeholder="Ejemplo: Seguros XYZ" required>
+        </div>
+        <div class="form-group">
+            <label for="nombreCliente">Nombre del Cliente(Firma):</label>
+            <input type="text" id="nombreCliente" placeholder="Ejemplo: Juan Pérez" required>
+        </div>
+        <div class="form-group">
+            <label for="cedulaCliente">C.I. Cliente(Firma):</label>
+            <input type="text" id="cedulaCliente" placeholder="Ejemplo: 123.456.789" required>
+        </div>
+        <button type="submit">Generar Contrato</button>
+    </form>
+
+    <div id="contractOutput" class="contract-output" style="display: none;">
+        <h2>Contrato Generado</h2>
+        <div id="contractContent"></div>
+        <button id="printButton" onclick="printContract()">Imprimir Contrato</button>
+    </div>
+</div>
+
+<script>
+    const vehicles = [
+        { tipo: "AUTOMOVIL", marca: "CHERY", modelo: "ARRIZO3", año_fab: "2019", color: "BLANCO", chasis_no: "LVVDC21B8LD019001", matricula: "AAGT 983" },
+        { tipo: "AUTOMOVIL", marca: "NISSAN", modelo: "VERSA 2024", año_fab: "2023", color: "AZUL", chasis_no: "3N1CN8AE5ZL118040", matricula: "AASI650" },
+        { tipo: "AUTOMOVIL", marca: "TOYOTA", modelo: "ALLION", año_fab: "2007", color: "PERLA", chasis_no: "NZT2603003525", matricula: "AASR959" },
+        { tipo: "AUTOMOVIL", marca: "NISSAN", modelo: "VERSA 2024", año_fab: "2023", color: "BLANCO", chasis_no: "3N1CN8AE5ZL118050", matricula: "AASI655" },
+        { tipo: "AUTOMOVIL", marca: "TOYOTA", modelo: "VITZ", año_fab: "2012", color: "PLATA", chasis_no: "NSP1302074096", matricula: "AART132" },
+        { tipo: "AUTOMOVIL", marca: "TOYOTA", modelo: "VITZ RS", año_fab: "2008", color: "GRIS", chasis_no: "SCP905086890", matricula: "PROVISORIA AAPA156" },
+        { tipo: "AUTOMOVIL", marca: "KIA", modelo: "SOLUTO EX 1.4 G A/T/2025", año_fab: "2024", color: "NEGRO", chasis_no: "LDJOAA29BS0272268", matricula: "AART 511" },
+        { tipo: "AUTOMOVIL", marca: "KIA", modelo: "SOLUTO EX 1.4 G A/T", año_fab: "2025", color: "AZUL", chasis_no: "LJDOAA29BS0272277", matricula: "AART 514" },
+        { tipo: "AUTOMOVIL", marca: "KIA", modelo: "SOLUTO", año_fab: "2022", color: "GRIS OSCURO", chasis_no: "LJD0AA29AP0180046", matricula: "AALZ721" },
+        { tipo: "AUTOMOVIL", marca: "KIA", modelo: "SOLUTO", año_fab: "2020", color: "BLANCO", chasis_no: "LJDOAA29AM0143047", matricula: "AAGB 713" },
+        { tipo: "AUTOMOVIL", marca: "KIA", modelo: "PICANTO", año_fab: "2025", color: "GRIS OSCURO", chasis_no: "KNAB2514BST272018", matricula: "AASS414" },
+        { tipo: "AUTOMOVIL", marca: "KIA", modelo: "PICANTO", año_fab: "2025", color: "PLATA", chasis_no: "KNAB2514BST272360", matricula: "AASS419" },
+        { tipo: "AUTOMOVIL", marca: "KIA", modelo: "PICANTO", año_fab: "2025", color: "BLANCO", chasis_no: "KNAB2514BST268300", matricula: "PROVISORIA AASS 410" },
+        { tipo: "ST WAGON", marca: "KGM", modelo: "XLV AUT 4X2 DELUXE", año_fab: "2024", color: "AZUL", chasis_no: "KPT26A1VSRP414773", matricula: "AASN539" },
+        { tipo: "AUTOMOVIL", marca: "SSANGYONG", modelo: "KORANDO/2016", año_fab: "2015", color: "BLANCO", chasis_no: "KPTAOA1SSGP234391", matricula: "BZL 122" },
+        { tipo: "AUTOMOVIL", marca: "MITSUBISHI", modelo: "MIRAGE GLS CVT", año_fab: "2024", color: "BLANCO SOLID", chasis_no: "MMBXTA03APH000203", matricula: "INI534" },
+        { tipo: "AUTOMOVIL", marca: "MITSUBISHI", modelo: "MIRAGE GLS CVT 2024", año_fab: "2023", color: "NEGRO MICA", chasis_no: "MMBXTA03APH000225", matricula: "PROVISORIA ING928" },
+        { tipo: "AUTOMOVIL", marca: "MITSUBISHI", modelo: "MIRAGE GLS CVT 2023", año_fab: "2023", color: "BLANCO SOLID", chasis_no: "MMBXTA03APH0000233", matricula: "PROVISORIA INN163" },
+        { tipo: "ST WAGON", marca: "NISSAN", modelo: "KICKS 1.6 SENSE AT", año_fab: "2025", color: "GRIS", chasis_no: "9ADFCAP15ZB202418", matricula: "AARA479" },
+        { tipo: "SUV", marca: "VOLKSWAGEN", modelo: "TCROSS 1.0 TRENDLINE TF AT", año_fab: "2025", color: "AZUL NORWAY", chasis_no: "9BWBH6BF0S4015945", matricula: "AASR372" },
+        { tipo: "AUTOMOVIL", marca: "NISSAN", modelo: "QASHQAI", año_fab: "2024", color: "GRIS GRAFITO", chasis_no: "SJNTAAJ12RA378007", matricula: "AARA479" },
+        { tipo: "AUTOMOVIL", marca: "HYUNDAI", modelo: "GRAN STAREX", año_fab: "2011", color: "GRIS", chasis_no: "KMJWA37J88U344798", matricula: "IMV097" },
+        { tipo: "STATION WAGON", marca: "KIA", modelo: "SPORTAGE", año_fab: "2025", color: "GRIS OSCURO", chasis_no: "KNAPU81DBS7306263", matricula: "AASN442" },
+        { tipo: "CAMIONETA DC", marca: "NISSAN", modelo: "FRONTIER", año_fab: "2025", color: "NEGRO", chasis_no: "3N6CD33B1ZK463414", matricula: "AARU 298" }
+    ];
+
+    const vehicleList = document.getElementById('vehicleList');
+    
+    vehicles.forEach(vehicle => {
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = "#";
+        link.textContent = `${vehicle.marca} ${vehicle.modelo} (${vehicle.año_fab})`;
+        link.addEventListener('click', () => selectVehicle(vehicle));
+        listItem.appendChild(link);
+        vehicleList.appendChild(listItem);
+    });
+
+    let selectedVehicle = null;
+
+    function selectVehicle(vehicle) {
+        selectedVehicle = vehicle;
+        alert(`Vehículo seleccionado: ${vehicle.marca} ${vehicle.modelo} (${vehicle.año_fab})`);
+    }
+
+    document.getElementById('contractForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const fecha = document.getElementById('fecha').value;
+    const nombre = document.getElementById('nombre').value;
+    const cedula = document.getElementById('cedula').value;
+    const domicilio = document.getElementById('domicilio').value;
+    const ciudad = document.getElementById('ciudad').value;
+    const celular = document.getElementById('celular').value;
+    const monto = document.getElementById('monto').value;
+    const fechaRetiro = document.getElementById('fecha_retiro').value;
+    const horaRetiro = document.getElementById('hora_retiro').value;
+    const fechaDevolucion = document.getElementById('fecha_devolucion').value;
+    const horaDevolucion = document.getElementById('hora_devolucion').value;
+    const kmTarifa = document.getElementById('km_tarifa').value;
+    const diasAlquilados = document.getElementById('dias_alquilados').value;
+    const montoGarantia = document.getElementById('montoGarantia').value;
+    const montoFranquicia = document.getElementById('montoFranquicia').value;
+    const tipoTarifa = document.getElementById('km_tarifa').value;
+    const montoAccidente = document.getElementById('montoAccidente').value;
+    const aseguradora = document.getElementById('aseguradora').value;const nombreCliente = document.getElementById('nombreCliente').value;
+    const cedulaCliente = document.getElementById('cedulaCliente').value;
+
+    if (!selectedVehicle) {
+        alert("Por favor, selecciona un vehículo.");
+        return;
+    }
+
+        const contratoTexto = `
+    <p>CONTRATO PRIVADO DE ARRENDAMIENTO DE VEHÍCULO</p>
+    <p>En la ciudad de San Lorenzo, ciudad de la República del Paraguay, a los ${fecha} días del mes de Diciembre del año DOS MIL VEINTE Y CUATRO, ENTRE LAS SIGUIENTES PERSONAS:</p>
+    <p>Por una parte, el Sr. ${nombre} con Cédula de Identidad Civil N° ${cedula}, domiciliado en ${domicilio}, Cel ${celular}, a denominarse ARRENDATARIO.</p>
+    <p>Por la otra parte, el Sr. WILSON LUIS MEZA FLORES en Representación legal de WM GROUP S.R.L, paraguayo, soltero, con Cédula de Identidad Civil N.º 3.212.549, domiciliado en la casa de la calle Maricevich Nº 1821, Barrio Ycua Sati de Fernando de la Mora, a denominarse ARRENDADOR.</p>
+    <p>LOS CONTRATANTES, DICEN, QUE VIENEN POR ESTE ACTO A CELEBRAR UN CONTRATO PRIVADO DE ARRENDAMIENTO DE VEHÍCULO, que se regirá por las siguientes cláusulas y condiciones:</p>
+    <p><strong>PRIMERA:</strong> WM GROUP S.R.L es propietario del vehículo con las siguientes características: Tipo: AUTOMOVIL, Marca: ${selectedVehicle.marca}, Modelo: ${selectedVehicle.modelo}, Año de Fabricación: ${selectedVehicle.año_fab}, Color: ${selectedVehicle.color}, Chasis No: ${selectedVehicle.chasis_no}, Matrícula No: ${selectedVehicle.matricula}.</p>
+    <p><strong>SEGUNDA:</strong> El arrendador deja constancia que el vehículo a que se refiere la cláusula primera se encuentra en buen estado de funcionamiento mecánico y conservación de carrocería, pintura y accesorios tales como Autorradio, rueda de auxilio, extintor, baliza, juego de herramientas (llave de ruedas, gato, llave del gato); además, se resalta el catalizador y si faltare alguno de los mencionados se tomarán las medidas que correspondan como hurto, sin ningún desgaste que el producido por el uso normal y ordinario.</p>
+    <p><strong>TERCERA:</strong> El ARRENDADOR se obliga a ceder el uso del bien descrito en la cláusula primera a favor del ARRENDATARIO a título de arrendamiento. Por su parte, el ARRENDATARIO se obliga a pagar al ARRENDADOR el monto de la renta pactada en la cláusula siguiente, en la forma y oportunidad convenidas.</p>
+    <p><strong>CUARTA:</strong> Las partes acuerdan que el monto de la renta que pagará el ARRENDATARIO en calidad de contraprestación por el uso del bien, por el alquiler de ${diasAlquilados} días adelantados, será de Gs. ${monto}, cantidad que será cancelada en dinero, en la forma y oportunidad que se refiere la cláusula siguiente.</p>
+    <p><strong>QUINTA:</strong> El Arrendatario hace el pago completo en el momento de firma del contrato de Gs. ${monto} en concepto de alquiler y la suma de Gs. ${montoGarantia} en concepto de garantía, la cual será reembolsada al momento de devolución del vehículo en el mismo estado que fue retirado. Obs: El monto de la franquicia de seguro es de Gs. ${montoFranquicia}, dicho monto será a cargo del arrendatario ante cualquier siniestro que pudiera suceder.</p>
+    <p><strong>SEXTA:</strong> Las partes convienen fijar un plazo de duración determinada para el presente contrato, el cual será de ${diasAlquilados} días que se computarán a partir de la fecha de entrega del vehículo el día ${fechaRetiro} a las ${horaRetiro} hasta el día ${fechaDevolucion} a las ${horaDevolucion}, fecha en que el ARRENDATARIO está obligado a devolver el bien arrendado.</p>
+    <p><strong>SEPTIMA:</strong> EL ARRENDADOR se obliga a entregar el bien objeto de la prestación a su cargo en la fecha de suscripción de este documento, sin más constancia que las firmas de las partes puestas en él. Esta obligación se verificará con la entrega física del vehículo, las llaves y la tarjeta de propiedad del mismo; además, el vehículo en mención se entrega con el tanque de combustible (A Verificar).</p>
+    <p><strong>OCTAVA:</strong> El vehículo será utilizado con ${tipoTarifa}. El ARRENDATARIO autoriza en forma irrevocable para que incluyan su nombre personal o razón social que representa a la base de datos de Informconf S. A. u otra base de datos de información conforme a lo establecido en la Ley 1682, como también para que pueda proveer la información a terceros interesados. </p>
+    <p><strong>DÉCIMO OCTAVO:</strong> El arrendatario asume la responsabilidad de hacerse cargo de USD ${montoAccidente} en caso de ocasionar algún accidente por el uso inapropiado que pudiera ocasionar la pérdida total del bien arrendado y la aseguradora ${aseguradora} no cubra el siniestro causado por la irresponsabilidad o no cumplir con la ley de tránsito del Paraguay.</p>
+    <p><strong>NOVENO:</strong> EL ARRENDATARIO se obliga a destinar el bien arrendado única y exclusivamente para conducir el vehículo de Forma Particular.</p>
+    <p><strong>DÉCIMO PRIMERO:</strong> De otro lado, EL ARRENDATARIO está obligado a efectuar por cuenta y costo propio las reparaciones que sean necesarias para conservar el vehículo en el mismo estado en que fue entregado.</p>
+    <p><strong>DÉCIMO SEGUNDO:</strong> Así también el ARRENDATARIO queda prohibido de introducir mejoras, cambios o alteraciones internas y externas en el bien arrendado y sus accesorios, sin el consentimiento expreso y por escrito de EL ARRENDADOR. El ARRENDADOR tiene la libre potestad de incluir modificaciones y agregar ploteados y demás destinados a publicidad en todos los vehículos de su propiedad.</p>
+    <p><strong>DÉCIMO TERCERO:</strong> Queda entendido que mientras el vehículo se encuentra en posesión de EL ARRENDATARIO, éste responderá en forma exclusiva y excluyente por los daños causados; y otros hechos punibles de los cuales pueden derivar pena o sanción. Queda estipulado entre las partes que el vehículo tendrá como único objeto principal el transporte de personas y sus equipajes. Cualquier objeto que circule dentro del rodado será exclusiva responsabilidad del conductor, así como también a terceras personas viajen o no en el interior del vehículo, por los daños causados a la propiedad privada o pública, así como por las transgresiones al reglamento de tránsito vigente en el país. Es decir, serán responsables civil y penalmente, además deberán responder con las faltas que aparezcan meses después si las mismas corresponden a las fechas del arrendamiento del vehículo. Los documentos extraviados tendrán un costo de Gs.- 500.000.- (cédula verde, habilitación, póliza de seguro).</p>
+    <p><strong>DÉCIMO CUARTO:</strong> EL ARRENDATARIO no podrá ceder a terceros el vehículo mencionado en el presente contrato bajo ningún título ni subarrendarlo ni ceder su posición contractual, salvo que cuente con el consentimiento expreso y por escrito de EL ARRENDADOR, en cuyo caso se suscribirán los documentos que fueren necesarios.</p>
+    <p><strong>DÉCIMO QUINTO:</strong> EL ARRENDATARIO se obliga a devolver el bien arrendado en la fecha de su vencimiento del plazo estipulado en la cláusula sexta de este contrato. Una vez efectuada la devolución, EL ARRENDADOR no responderá por el deterioro, destrucción, pérdida o sustracción de los bienes o valores de cualquier especie, de propiedad de EL ARRENDATARIO o de terceros, dejados al interior del vehículo.</p>
+    <p><strong>DÉCIMO SEPTIMO:</strong> Para la validez de todas las comunicaciones y notificaciones de las partes, con motivo de la ejecución de este contrato, ambas señalan como sus respectivos domicilios los indicados en la introducción de este documento. El cambio de domicilio de cualquiera de las partes surtirá efecto desde la fecha comunicación de dicho cambio a la otra parte, por cualquier medio escrito.</p>
+    <p><strong>DÉCIMO NOVENO:</strong> En lo no previsto por las partes en el presente contrato, ambas partes se someten a lo establecido por las normas del Código Civil y demás del sistema jurídico que resulten aplicables, y las partes se someten a los Tribunales Ordinarios de la Capital de la República y fijan domicilio en los lugares indicados precedentemente donde tendrán validez todas las notificaciones.</p>
+    <p>EN PRUEBA DE CONFORMIDAD Y ACEPTACIÓN, firman las partes en dos ejemplares de un mismo tenor y un solo texto, recibiendo cada parte su ejemplar.</p>
+    
+    <p>………………………………………………………………...</p>
+    <p>………………………………………………………………...</p>
+    <p>WILSON LUIS MEZA FLORES                                     ${nombreCliente}</p>
+    <p>REPRESENTANTE LEGAL                                         CI: ${cedulaCliente}</p>
+    <p>WM GROUP SRL</p>
+    <p>Le corresponde Hoja de Certificación de Firmas Nº ………………- SERIE ////</p>
+`;
+        
+const contractContent = document.getElementById('contractContent');
+    contractContent.innerHTML = contratoTexto;
+
+    const contractOutput = document.getElementById('contractOutput');
+    contractOutput.style.display = 'block';
+});
+
+    function printContract() {
+        const content = document.getElementById('contractContent').innerHTML;
+        const printWindow = window.open('', '', 'height=600,width=800');
+        printWindow.document.write('<html><head><title>Imprimir Contrato</title></head><body>');
+        printWindow.document.write(content);
+        printWindow.document.write
+        printWindow.document.write('</body></html>');
+        printWindow.document.close();
+        printWindow.print();
+    }
+</script>
+</body>
+</html>
