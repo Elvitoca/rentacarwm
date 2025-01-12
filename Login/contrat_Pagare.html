@@ -170,6 +170,11 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+/*Texto final formateado*/
+.formatted-text {
+            white-space: pre; /* Mantiene los espacios y saltos de línea */
+            font-size: 16px; /* Tamaño de fuente */
+            line-height: 1.5; /* Espaciado entre líneas */
     </style>
 </head>
 <body>
@@ -472,10 +477,12 @@ button:hover {
     
     <p>………………………………………………………………...</p>
     <p>………………………………………………………………...</p>
-    <p>WILSON LUIS MEZA FLORES                                     ${nombreCliente}</p>
-    <p>REPRESENTANTE LEGAL                                         CI: ${cedulaCliente}</p>
-    <p>WM GROUP SRL</p>
-    <p>Le corresponde Hoja de Certificación de Firmas Nº ………………- SERIE ////</p>
+    <div class="formatted-text">
+             ………………………………                                                 ………………………………
+         WILSON LUIS MEZA FLORES	                                    ${nombreCliente}  
+           REPRESENTANTE LEGAL                                           C.I.:${cedulaCliente}                                                                                                                                                                    
+    Le corresponde Hoja de Certificación de Firmas Nº ………………- SERIE         ////
+</div>
 `;
         
 const contractContent = document.getElementById('contractContent');
