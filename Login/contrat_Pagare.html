@@ -338,74 +338,75 @@
         </div>
         <!--Formulario Pagaré-->
         <section id="pagareSection">
-            <h2>Datos del Pagaré</h2>
-            <form id="pagareForm">
-                <div class="form-group">
-                    <label for="numeroPagare">Pagaré N°:</label>
-                    <input type="text" id="numeroPagare" placeholder="Número" required>
-                    <input type="text" id="numeroBarra" placeholder="Número Barra" required>
-                </div>
-                <div class="form-group">
-                    <label for="montoNumeros">Por USD:</label>
-                    <input type="number" id="montoNumeros" placeholder="Monto en números" required>
-                </div>
-                <div class="form-group">
-                    <label for="fechaEmision">Fecha de Emisión:</label>
-                    <input type="date" id="fechaEmision" required>
-                </div>
-                <div class="form-group">
-                    <label for="fechaVencimiento">Fecha de Vencimiento:</label>
-                    <input type="date" id="fechaVencimiento" required>
-                </div>
-                <div class="form-group">
-                    <label for="montoLetras">Monto en letras:</label>
-                    <input type="text" id="montoLetras" placeholder="Monto en letras" required>
-                </div>
-                <div class="form-group">
-                    <label for="interesMoratorio">Interés moratorio (%):</label>
-                    <input type="number" id="interesMoratorio" placeholder="Porcentaje" required>
-                </div>
-                <div class="form-group">
-                    <label for="interesPunitorio">Interés punitorio (%):</label>
-                    <input type="number" id="interesPunitorio" placeholder="Porcentaje" required>
-                </div>
-                <div class="form-group">
-                    <label for="ciudad">Ciudad:</label>
-                    <input type="text" id="ciudad" placeholder="Nombre de la ciudad" required>
-                </div>
-                <div class="form-group">
-                    <label for="domicilioEspecial">Domicilio Especial:</label>
-                    <input type="text" id="domicilioEspecial" placeholder="Domicilio especial" required>
-                </div>
-                <div class="form-group">
-                    <label for="telefono">Tel/N°:</label>
-                    <input type="text" id="telefono" placeholder="Teléfono" required>
-                </div>
-                <div class="form-group">
-                    <label for="fax">Fax/N°:</label>
-                    <input type="text" id="fax" placeholder="Fax" required>
-                </div>
-                <div class="form-group">
-                    <label for="celular">Cel/N°:</label>
-                    <input type="text" id="celular" placeholder="Celular" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-Mail:</label>
-                    <input type="email" id="email" placeholder="E-Mail" required>
-                </div>
-                <div class="form-group">
-                    <label for="deudor">Deudor:</label>
-                    <input type="text" id="deudor" placeholder="Nombre y Apellido del deudor" required>
-                </div>
-                <div class="form-group">
-                    <label for="documentoIdentidad">Documento/Identidad N°:</label>
-                    <input type="text" id="documentoIdentidad" placeholder="Número de identidad" required>
-                </div>
-                <button type="submit">Generar Pagaré</button>
-            </form>
-            <button type="button" id="imprimirPagare" style="display:none;">Imprimir Pagaré</button>
-            <div id="pagareOutput" style="display:none; margin-top:20px;"></div>
-        </section>
+    <h2>Datos del Pagaré</h2>
+    <form id="pagareForm">
+        <div class="form-group">
+            <label for="numeroPagare">Pagaré N°:</label>
+            <input type="text" id="numeroPagare" placeholder="Número" required>
+            <input type="text" id="numeroBarra" placeholder="Número Barra" required>
+        </div>
+        <div class="form-group">
+            <label for="montoNumeros">Por USD:</label>
+            <input type="number" id="montoNumeros" placeholder="Monto en números" required>
+        </div>
+        <div class="form-group">
+            <label for="fechaEmision">Fecha de Emisión:</label>
+            <input type="date" id="fechaEmision" required>
+        </div>
+        <div class="form-group">
+            <label for="fechaVencimiento">Fecha de Vencimiento:</label>
+            <input type="date" id="fechaVencimiento" required>
+        </div>
+        <div class="form-group">
+            <label for="montoLetras">Monto en letras:</label>
+            <input type="text" id="montoLetras" placeholder="Monto en letras" required>
+        </div>
+        <div class="form-group">
+            <label for="interesMoratorio">Interés moratorio (%):</label>
+            <input type="number" id="interesMoratorio" placeholder="Porcentaje" required>
+        </div>
+        <div class="form-group">
+            <label for="interesPunitorio">Interés punitorio (%):</label>
+            <input type="number" id="interesPunitorio" placeholder="Porcentaje" required>
+        </div>
+        <div class="form-group">
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" placeholder="Nombre de la ciudad" required>
+        </div>
+        <div class="form-group">
+            <label for="domicilioEspecial">Domicilio Especial:</label>
+            <input type="text" id="domicilioEspecial" placeholder="Domicilio especial" required>
+        </div>
+        <div class="form-group">
+            <label for="telefono">Tel/N°:</label>
+            <input type="text" id="telefono" placeholder="Teléfono" required>
+        </div>
+        <div class="form-group">
+            <label for="fax">Fax/N°:</label>
+            <input type="text" id="fax" placeholder="Fax" required>
+        </div>
+        <div class="form-group">
+            <label for="celular">Cel/N°:</label>
+            <input type="text" id="celular" placeholder="Celular" required>
+        </div>
+        <div class="form-group">
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" placeholder="E-Mail" required>
+        </div>
+        <div class="form-group">
+            <label for="deudor">Deudor:</label>
+            <input type="text" id="deudor" placeholder="Nombre y Apellido del deudor" required>
+        </div>
+        <div class="form-group">
+            <label for="documentoIdentidad">Documento/Identidad N°:</label>
+            <input type="text" id="documentoIdentidad" placeholder="Número de identidad" required>
+        </div>
+        <button type="submit">Generar Pagaré</button>
+    </form>
+    <button type="button" id="imprimirPagare" class="hidden">Imprimir Pagaré</button>
+    <button type="button" id="generarImagen" class="hidden">Generar Imagen</button>
+    <div id="pagareOutput" style="display:none; margin-top:20px;"></div>
+</section>
     </div>
     <!--Generara Contrato-->
     <script>
@@ -566,63 +567,73 @@
     <!--Generara Pagaré-->
     <script>
         document.getElementById('pagareForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            generatePagare();
-        });
+    event.preventDefault();
+    generatePagare();
+});
 
-        function generatePagare() {
-            const numeroPagare = document.getElementById('numeroPagare').value;
-            const numeroBarra = document.getElementById('numeroBarra').value;
-            const montoNumeros = document.getElementById('montoNumeros').value;
-            const fechaEmision = document.getElementById('fechaEmision').value;
-            const fechaVencimiento = document.getElementById('fechaVencimiento').value;
-            const montoLetras = document.getElementById('montoLetras').value;
-            const interesMoratorio = document.getElementById('interesMoratorio').value;
-            const interesPunitorio = document.getElementById('interesPunitorio').value;
-            const ciudad = document.getElementById('ciudad').value;
-            const domicilioEspecial = document.getElementById('domicilioEspecial').value;
-            const telefono = document.getElementById('telefono').value;
-            const fax = document.getElementById('fax').value;
-            const celular = document.getElementById('celular').value;
-            const email = document.getElementById('email').value;
-            const deudor = document.getElementById('deudor').value;
-            const documentoIdentidad = document.getElementById('documentoIdentidad').value;
+function generatePagare() {
+    const numeroPagare = document.getElementById('numeroPagare').value;
+    const numeroBarra = document.getElementById('numeroBarra').value;
+    const montoNumeros = document.getElementById('montoNumeros').value;
+    const fechaEmision = document.getElementById('fechaEmision').value;
+    const fechaVencimiento = document.getElementById('fechaVencimiento').value;
+    const montoLetras = document.getElementById('montoLetras').value;
+    const interesMoratorio = document.getElementById('interesMoratorio').value;
+    const interesPunitorio = document.getElementById('interesPunitorio').value;
+    const ciudad = document.getElementById('ciudad').value;
+    const domicilioEspecial = document.getElementById('domicilioEspecial').value;
+    const telefono = document.getElementById('telefono').value;
+    const fax = document.getElementById('fax').value;
+    const celular = document.getElementById('celular').value;
+    const email = document.getElementById('email').value;
+    const deudor = document.getElementById('deudor').value;
+    const documentoIdentidad = document.getElementById('documentoIdentidad').value;
 
-            const pagareTexto = `
-    <div class="titulo_lindito">
+    const pagareTexto = `
+        <div class="titulo_lindito">
             <div class="cabecera_OK">
                 <div class="titulo_texto"></div>
                 <div class="contact-info">
-    <div class="contact-item">
-        <strong>Rent a Car WM</strong>
-        
-        <p>San Miguel Esq. Feliciando Duarte - San Lorenzo</p>
-    </div>
- 
-    <div class="contact-item">
-       
-        <p>0983 496 378</p>
-    </div>
-</div>
-
-
+                    <div class="contact-item">
+                        <strong>Rent a Car WM</strong>
+                        <p>San Miguel Esq. Feliciando Duarte - San Lorenzo</p>
+                    </div>
+                    <div class="contact-item">
+                        <p>0983 496 378</p>
+                    </div>
+                </div>
                 <img src="../assets/img/WMLogo.png" alt="WM Logo" class="logo_imagen">
             </div>
             <br> <br>
-    <h3>PAGARE A LA ORDEN</h3>
-        <p>Pagaré N° ${numeroPagare}/${numeroBarra} Por USD ${montoNumeros}.-</p>
-        <p>Fecha de Emisión: ${fechaEmision} Fecha de Vencimiento: ${fechaVencimiento}</p>
-        <p>El día de vencimiento de este documento, pagaré a la orden, solidariamente, libre de gastos y sin protesto alguno a WM GROUP SRL, en su domicilio de la calle MARICEVICH 1821 ESQ CORONEL FRANCO, la suma de USD ${montoLetras}, por igual valor recibido a mi (nuestra) satisfacción, comprometiendo mis (nuestros) bienes propios, gananciales y/o reservados.</p>
-        <p>La falta de pago de este pagaré en fecha de su vencimiento, me (nos) constituirá en mora de pleno derecho y producirá el decaimiento de los plazos de todas mis (nuestras) demás obligaciones para con el acreedor tomándolas íntegramente exigibles sin necesidad de protesto, ni requerimiento extra judicial o judicial alguno, en cuyo caso la totalidad de la deuda devengará un interés moratorio del ${interesMoratorio}% mensual y un interés punitorio del ${interesPunitorio}% mensual desde el día del vencimiento hasta el del efectivo pago. El simple vencimiento establecerá la mora, autorizando a la consulta como su inclusión a la base de datos de Informconf conforme a lo establecido a la ley 1682, como también para que se pueda proveer la información a terceros interesados.</p>
-        <p>A todos los efectos legales, me (nos) someto (emos) a la jurisdicción de los juzgados y tribunales de la ciudad de ${ciudad}, constituyéndome (nos) con domicilio especial en ${domicilioEspecial}, Tel/N°: ${telefono}, Fax/N°: ${fax}, Cel/N°: ${celular}, E-Mail: ${email}.</p>
-        <p>DEUDOR: ${deudor}</p>
-        <p>Documento/Identidad N°: ${documentoIdentidad}.</p>
+            <h3>PAGARE A LA ORDEN</h3>
+            <p>Pagaré N° ${numeroPagare}/${numeroBarra} Por USD ${montoNumeros}.-</p>
+            <p>Fecha de Emisión: ${fechaEmision} Fecha de Vencimiento: ${fechaVencimiento}</p>
+            <p>El día de vencimiento de este documento, pagaré a la orden, solidariamente, libre de gastos y sin protesto alguno a WM GROUP SRL, en su domicilio de la calle MARICEVICH 1821 ESQ CORONEL FRANCO, la suma de USD ${montoLetras}, por igual valor recibido a mi (nuestra) satisfacción, comprometiendo mis (nuestros) bienes propios, gananciales y/o reservados.</p>
+            <p>La falta de pago de este pagaré en fecha de su vencimiento, me (nos) constituirá en mora de pleno derecho y producirá el decaimiento de los plazos de todas mis (nuestras) demás obligaciones para con el acreedor tomándolas íntegramente exigibles sin necesidad de protesto, ni requerimiento extra judicial o judicial alguno, en cuyo caso la totalidad de la deuda devengará un interés moratorio del ${interesMoratorio}% mensual y un interés punitorio del ${interesPunitorio}% mensual desde el día del vencimiento hasta el del efectivo pago. El simple vencimiento establecerá la mora, autorizando a la consulta como su inclusión a la base de datos de Informconf conforme a lo establecido a la ley 1682, como también para que se pueda proveer la información a terceros interesados.</p>
+            <p>A todos los efectos legales, me (nos) someto (emos) a la jurisdicción de los juzgados y tribunales de la ciudad de ${ciudad}, constituyéndome (nos) con domicilio especial en ${domicilioEspecial}, Tel/N°: ${telefono}, Fax/N°: ${fax}, Cel/N°: ${celular}, E-Mail: ${email}.</p>
+            <p>DEUDOR: ${deudor}</p>
+            <p>Documento/Identidad N°: ${documentoIdentidad}.</p>
+        </div>
     `;
 
-            const pagareOutput = document.getElementById('pagareOutput');
-            pagareOutput.innerHTML = pagareTexto;
-            pagareOutput.style.display = 'block';
-        }
+    const pagareOutput = document.getElementById('pagareOutput');
+    pagareOutput.innerHTML = pagareTexto;
+    pagareOutput.style.display = 'block';
+
+    // Mostrar los botones
+    document.getElementById('imprimirPagare').classList.remove('hidden');
+    document.getElementById('generarImagen').classList.remove('hidden');
+}
+
+document.getElementById('generarImagen').addEventListener('click', function() {
+    const pagareOutput = document.getElementById('pagareOutput');
+    html2canvas(pagareOutput).then(function(canvas) {
+        const link = document.createElement('a');
+        link.download = 'pagare.png'; // Nombre del archivo
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    });
+});
     </script>
 </body>
 
