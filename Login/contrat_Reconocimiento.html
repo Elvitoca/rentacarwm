@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,23 +12,55 @@
             padding: 0;
             background: linear-gradient(to right, orangered, orange);
         }
+
+        .container_txt {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-size: 12px;
+            font-weight: bold;
+            height: 200px;
+        }
+
+        .box.red {
+            background-color: ;
+        }
+
+        .box.blue {
+            background-color: ;
+        }
+
         .container {
             max-width: 800px;
             margin: 20px auto;
-            background-color: #fff;
+            background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         h1 {
             text-align: center;
             color: #333;
         }
+
         label {
             display: block;
             margin-bottom: 8px;
             color: #555;
         }
+
         input[type="text"] {
             width: 100%;
             padding: 8px;
@@ -35,23 +68,28 @@
             border: 1px solid #ddd;
             border-radius: 4px;
         }
+
         .form-group {
             margin-bottom: 20px;
         }
+
         .vehicle-list a {
             text-decoration: none;
             color: #007BFF;
         }
+
         .vehicle-list a:hover {
             text-decoration: underline;
         }
+
         .contract-output {
             margin-top: 30px;
-            background-color: #e9ecef;
+            background-color: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: black 2px solid;
         }
+
         button {
             background-color: #007BFF;
             color: white;
@@ -62,195 +100,291 @@
             cursor: pointer;
             margin-top: 20px;
         }
+
         button:hover {
             background-color: #0056b3;
         }
+
+        /*Seccion Logo*/
+        .titulo_lindito {
+            width: 100%;
+            background-color: ;
+        }
+
+        .contact-info {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            max-width: 400px;
+            margin: 0 auto;
+            /* Centra horizontalmente */
+            text-align: center;
+            /* Centra el texto */
+            font-size: 11px;
+            /* Tamaño de letra */
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+        }
+
+        .contact-item strong {
+            color: #000;
+        }
+
+        .contact-item p {
+            margin: 5px 0 0;
+        }
+
+        .contact-item a {
+            color: #007BFF;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .cabecera_OK {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 15px;
+            /* Bordes redondeados */
+
+
+        }
+
+        .titulo_texto {
+            font-size: 10px;
+            color: black;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            /* Evita saltos de línea */
+            text-decoration: none;
+            /* Sin subrayado */
+        }
+
+        .logo_imagen {
+            height: 50px;
+            margin-left: auto;
+            /* Alinea la imagen a la derecha */
+        }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <h2>Contrato con Reconocimiento</h2>
-    <h3>Selecciona un Vehículo</h3>
-    <ul id="vehicleList" class="vehicle-list"></ul>
+    <div class="container">
+        <h2>Contrato con Reconocimiento</h2>
+        <h3>Selecciona un Vehículo</h3>
+        <ul id="vehicleList" class="vehicle-list"></ul>
 
-    <form id="contractForm">
-        <h2>Datos del Arrendatario</h2>
+        <form id="contractForm">
+            <h2>Datos del Arrendatario</h2>
+
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="text" id="fecha" placeholder="Día/Mes/Año">
+            </div>
+
+            <div class="form-group">
+                <label for="nombre">Nombre y Apellido del Arrendatario:</label>
+                <input type="text" id="nombre" placeholder="Ejemplo: Juan Pérez">
+            </div>
+
+            <div class="form-group">
+                <label for="cedula">Cédula de Identidad (Formato 123.456.789):</label>
+                <input type="text" id="cedula" placeholder="123.456.789">
+            </div>
+
+            <div class="form-group">
+                <label for="domicilio">Domicilio:</label>
+                <input type="text" id="domicilio" placeholder="Ejemplo: Calle 123, Barrio Centro">
+            </div>
+
+            <div class="form-group">
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" id="ciudad" placeholder="Ciudad">
+            </div>
+
+            <div class="form-group">
+                <label for="celular">Celular:</label>
+                <input type="text" id="celular" placeholder="0981-123-456">
+            </div>
+
+            <div class="form-group">
+                <label for="monto">Monto en Guaraníes:</label>
+                <input type="text" id="monto" placeholder="Ejemplo: 1.000.000">
+            </div>
+
+            <div class="form-group">
+                <label for="fecha_retiro">Fecha de Retiro del Vehículo:</label>
+                <input type="text" id="fecha_retiro" placeholder="Día/Mes/Año">
+            </div>
+
+            <div class="form-group">
+                <label for="hora_retiro">Hora de Retiro:</label>
+                <input type="text" id="hora_retiro" placeholder="Ejemplo: 08:00 AM">
+            </div>
+
+            <div class="form-group">
+                <label for="fecha_devolucion">Fecha de Devolución:</label>
+                <input type="text" id="fecha_devolucion" placeholder="Día/Mes/Año">
+            </div>
+
+            <div class="form-group">
+                <label for="hora_devolucion">Hora de Devolución:</label>
+                <input type="text" id="hora_devolucion" placeholder="Ejemplo: 06:00 PM">
+            </div>
+
+            <div class="form-group">
+                <label for="km_tarifa">Kilometraje y Tarifa:</label>
+                <input type="text" id="km_tarifa" placeholder="Ejemplo: Ilimitado">
+            </div>
+
+            <div class="form-group">
+                <label for="dias_alquilados">Días Alquilados:</label>
+                <input type="text" id="dias_alquilados" placeholder="Ejemplo: 3">
+            </div>
+            <div class="form-group">
+                <label for="montoGarantia">Monto de la Garantía del Vehículo:</label>
+                <input type="number" id="montoGarantia" name="montoGarantia" required>
+            </div>
+            <div class="form-group">
+                <label for="montoFranquicia">Monto de la Franquicia de Seguro:</label>
+                <input type="number" id="montoFranquicia" name="montoFranquicia" required>
+            </div>
+            <div class="form-group">
+                <label for="montoAccidente">Cargo por Accidente USD:</label>
+                <input type="number" id="montoAccidente" placeholder="Ejemplo: 5000" required>
+            </div>
+            <div class="form-group">
+                <label for="aseguradora">Nombre de la Aseguradora:</label>
+                <input type="text" id="aseguradora" placeholder="Ejemplo: Seguros XYZ" required>
+            </div>
+            <div class="form-group">
+                <label for="nombreCliente">Nombre del Cliente(Firma):</label>
+                <input type="text" id="nombreCliente" placeholder="Ejemplo: Juan Pérez" required>
+            </div>
+            <div class="form-group">
+                <label for="cedulaCliente">C.I. Cliente(Firma):</label>
+                <input type="text" id="cedulaCliente" placeholder="Ejemplo: 123.456.789" required>
+            </div>
+            <button type="submit">Generar Contrato</button>
+        </form>
+
+        <div id="contractOutput" class="contract-output" style="display: none;">
+            <h2>Contrato Generado</h2>
+            <div id="contractContent"></div>
+            <button id="printButton" onclick="printContract()">Imprimir Contrato</button>
+        </div>
+    </div>
+
+    <script>
+        const vehicles = [
+            { tipo: "AUTOMOVIL", marca: "CHERY", modelo: "ARRIZO3", año_fab: "2019", color: "BLANCO", chasis_no: "LVVDC21B8LD019001", matricula: "AAGT 983" },
+            { tipo: "AUTOMOVIL", marca: "NISSAN", modelo: "VERSA 2024", año_fab: "2023", color: "AZUL", chasis_no: "3N1CN8AE5ZL118040", matricula: "AASI650" },
+            { tipo: "AUTOMOVIL", marca: "TOYOTA", modelo: "ALLION", año_fab: "2007", color: "PERLA", chasis_no: "NZT2603003525", matricula: "AASR959" },
+            { tipo: "AUTOMOVIL", marca: "NISSAN", modelo: "VERSA 2024", año_fab: "2023", color: "BLANCO", chasis_no: "3N1CN8AE5ZL118050", matricula: "AASI655" },
+            { tipo: "AUTOMOVIL", marca: "TOYOTA", modelo: "VITZ", año_fab: "2012", color: "PLATA", chasis_no: "NSP1302074096", matricula: "AART132" },
+            { tipo: "AUTOMOVIL", marca: "TOYOTA", modelo: "VITZ RS", año_fab: "2008", color: "GRIS", chasis_no: "SCP905086890", matricula: "PROVISORIA AAPA156" },
+            { tipo: "AUTOMOVIL", marca: "KIA", modelo: "SOLUTO EX 1.4 G A/T/2025", año_fab: "2024", color: "NEGRO", chasis_no: "LDJOAA29BS0272268", matricula: "AART 511" },
+            { tipo: "AUTOMOVIL", marca: "KIA", modelo: "SOLUTO EX 1.4 G A/T", año_fab: "2025", color: "AZUL", chasis_no: "LJDOAA29BS0272277", matricula: "AART 514" },
+            { tipo: "AUTOMOVIL", marca: "KIA", modelo: "SOLUTO", año_fab: "2022", color: "GRIS OSCURO", chasis_no: "LJD0AA29AP0180046", matricula: "AALZ721" },
+            { tipo: "AUTOMOVIL", marca: "KIA", modelo: "SOLUTO", año_fab: "2020", color: "BLANCO", chasis_no: "LJDOAA29AM0143047", matricula: "AAGB 713" },
+            { tipo: "AUTOMOVIL", marca: "KIA", modelo: "PICANTO", año_fab: "2025", color: "GRIS OSCURO", chasis_no: "KNAB2514BST272018", matricula: "AASS414" },
+            { tipo: "AUTOMOVIL", marca: "KIA", modelo: "PICANTO", año_fab: "2025", color: "PLATA", chasis_no: "KNAB2514BST272360", matricula: "AASS419" },
+            { tipo: "AUTOMOVIL", marca: "KIA", modelo: "PICANTO", año_fab: "2025", color: "BLANCO", chasis_no: "KNAB2514BST268300", matricula: "PROVISORIA AASS 410" },
+            { tipo: "ST WAGON", marca: "KGM", modelo: "XLV AUT 4X2 DELUXE", año_fab: "2024", color: "AZUL", chasis_no: "KPT26A1VSRP414773", matricula: "AASN539" },
+            { tipo: "AUTOMOVIL", marca: "SSANGYONG", modelo: "KORANDO/2016", año_fab: "2015", color: "BLANCO", chasis_no: "KPTAOA1SSGP234391", matricula: "BZL 122" },
+            { tipo: "AUTOMOVIL", marca: "MITSUBISHI", modelo: "MIRAGE GLS CVT", año_fab: "2024", color: "BLANCO SOLID", chasis_no: "MMBXTA03APH000203", matricula: "INI534" },
+            { tipo: "AUTOMOVIL", marca: "MITSUBISHI", modelo: "MIRAGE GLS CVT 2024", año_fab: "2023", color: "NEGRO MICA", chasis_no: "MMBXTA03APH000225", matricula: "PROVISORIA ING928" },
+            { tipo: "AUTOMOVIL", marca: "MITSUBISHI", modelo: "MIRAGE GLS CVT 2023", año_fab: "2023", color: "BLANCO SOLID", chasis_no: "MMBXTA03APH0000233", matricula: "PROVISORIA INN163" },
+            { tipo: "ST WAGON", marca: "NISSAN", modelo: "KICKS 1.6 SENSE AT", año_fab: "2025", color: "GRIS", chasis_no: "9ADFCAP15ZB202418", matricula: "AARA479" },
+            { tipo: "SUV", marca: "VOLKSWAGEN", modelo: "TCROSS 1.0 TRENDLINE TF AT", año_fab: "2025", color: "AZUL NORWAY", chasis_no: "9BWBH6BF0S4015945", matricula: "AASR372" },
+            { tipo: "AUTOMOVIL", marca: "NISSAN", modelo: "QASHQAI", año_fab: "2024", color: "GRIS GRAFITO", chasis_no: "SJNTAAJ12RA378007", matricula: "AARA479" },
+            { tipo: "AUTOMOVIL", marca: "HYUNDAI", modelo: "GRAN STAREX", año_fab: "2011", color: "GRIS", chasis_no: "KMJWA37J88U344798", matricula: "IMV097" },
+            { tipo: "STATION WAGON", marca: "KIA", modelo: "SPORTAGE", año_fab: "2025", color: "GRIS OSCURO", chasis_no: "KNAPU81DBS7306263", matricula: "AASN442" },
+            { tipo: "CAMIONETA DC", marca: "NISSAN", modelo: "FRONTIER", año_fab: "2025", color: "NEGRO", chasis_no: "3N6CD33B1ZK463414", matricula: "AARU 298" }
+        ];
+
+        const vehicleList = document.getElementById('vehicleList');
+
+        vehicles.forEach(vehicle => {
+            const listItem = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = "#";
+            link.textContent = `${vehicle.marca} ${vehicle.modelo} (${vehicle.año_fab})`;
+            link.addEventListener('click', () => selectVehicle(vehicle));
+            listItem.appendChild(link);
+            vehicleList.appendChild(listItem);
+        });
+
+        let selectedVehicle = null;
+
+        function selectVehicle(vehicle) {
+            selectedVehicle = vehicle;
+            alert(`Vehículo seleccionado: ${vehicle.marca} ${vehicle.modelo} (${vehicle.año_fab})`);
+        }
+
+        document.getElementById('contractForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const fecha = document.getElementById('fecha').value;
+            const nombre = document.getElementById('nombre').value;
+            const cedula = document.getElementById('cedula').value;
+            const domicilio = document.getElementById('domicilio').value;
+            const ciudad = document.getElementById('ciudad').value;
+            const celular = document.getElementById('celular').value;
+            const monto = document.getElementById('monto').value;
+            const fechaRetiro = document.getElementById('fecha_retiro').value;
+            const horaRetiro = document.getElementById('hora_retiro').value;
+            const fechaDevolucion = document.getElementById('fecha_devolucion').value;
+            const horaDevolucion = document.getElementById('hora_devolucion').value;
+            const kmTarifa = document.getElementById('km_tarifa').value;
+            const diasAlquilados = document.getElementById('dias_alquilados').value;
+            const montoGarantia = document.getElementById('montoGarantia').value;
+            const montoFranquicia = document.getElementById('montoFranquicia').value;
+            const tipoTarifa = document.getElementById('km_tarifa').value;
+            const montoAccidente = document.getElementById('montoAccidente').value;
+            const aseguradora = document.getElementById('aseguradora').value; const nombreCliente = document.getElementById('nombreCliente').value;
+            const cedulaCliente = document.getElementById('cedulaCliente').value;
+
+            if (!selectedVehicle) {
+                alert("Por favor, selecciona un vehículo.");
+                return;
+            }
+
+            const contratoTexto = `
+    <div class="titulo_lindito">
+            <div class="cabecera_OK">
+                <div class="titulo_texto"></div>
+                <div class="contact-info">
+    <div class="contact-item">
+        <strong>Rent a Car WM</strong>
         
-        <div class="form-group">
-            <label for="fecha">Fecha:</label>
-            <input type="text" id="fecha" placeholder="Día/Mes/Año">
-        </div>
-        
-        <div class="form-group">
-            <label for="nombre">Nombre y Apellido del Arrendatario:</label>
-            <input type="text" id="nombre" placeholder="Ejemplo: Juan Pérez">
-        </div>
-
-        <div class="form-group">
-            <label for="cedula">Cédula de Identidad (Formato 123.456.789):</label>
-            <input type="text" id="cedula" placeholder="123.456.789">
-        </div>
-
-        <div class="form-group">
-            <label for="domicilio">Domicilio:</label>
-            <input type="text" id="domicilio" placeholder="Ejemplo: Calle 123, Barrio Centro">
-        </div>
-
-        <div class="form-group">
-            <label for="ciudad">Ciudad:</label>
-            <input type="text" id="ciudad" placeholder="Ciudad">
-        </div>
-
-        <div class="form-group">
-            <label for="celular">Celular:</label>
-            <input type="text" id="celular" placeholder="0981-123-456">
-        </div>
-
-        <div class="form-group">
-            <label for="monto">Monto en Guaraníes:</label>
-            <input type="text" id="monto" placeholder="Ejemplo: 1.000.000">
-        </div>
-
-        <div class="form-group">
-            <label for="fecha_retiro">Fecha de Retiro del Vehículo:</label>
-            <input type="text" id="fecha_retiro" placeholder="Día/Mes/Año">
-        </div>
-
-        <div class="form-group">
-            <label for="hora_retiro">Hora de Retiro:</label>
-            <input type="text" id="hora_retiro" placeholder="Ejemplo: 08:00 AM">
-        </div>
-
-        <div class="form-group">
-            <label for="fecha_devolucion">Fecha de Devolución:</label>
-            <input type="text" id="fecha_devolucion" placeholder="Día/Mes/Año">
-        </div>
-
-        <div class="form-group">
-            <label for="hora_devolucion">Hora de Devolución:</label>
-            <input type="text" id="hora_devolucion" placeholder="Ejemplo: 06:00 PM">
-        </div>
-
-        <div class="form-group">
-            <label for="km_tarifa">Kilometraje y Tarifa:</label>
-            <input type="text" id="km_tarifa" placeholder="Ejemplo: Ilimitado">
-        </div>
-
-        <div class="form-group">
-            <label for="dias_alquilados">Días Alquilados:</label>
-            <input type="text" id="dias_alquilados" placeholder="Ejemplo: 3">
-        </div>
-        <div class="form-group">
-            <label for="montoGarantia">Monto de la Garantía del Vehículo:</label>
-            <input type="number" id="montoGarantia" name="montoGarantia" required>
-        </div>
-        <div class="form-group">
-            <label for="montoFranquicia">Monto de la Franquicia de Seguro:</label>
-            <input type="number" id="montoFranquicia" name="montoFranquicia" required>
-        </div>
-        <div class="form-group">
-            <label for="montoAccidente">Cargo por Accidente USD:</label>
-            <input type="number" id="montoAccidente" placeholder="Ejemplo: 5000" required>
-        </div>
-        <div class="form-group">
-            <label for="aseguradora">Nombre de la Aseguradora:</label>
-            <input type="text" id="aseguradora" placeholder="Ejemplo: Seguros XYZ" required>
-        </div>
-        <div class="form-group">
-            <label for="nombreCliente">Nombre del Cliente(Firma):</label>
-            <input type="text" id="nombreCliente" placeholder="Ejemplo: Juan Pérez" required>
-        </div>
-        <div class="form-group">
-            <label for="cedulaCliente">C.I. Cliente(Firma):</label>
-            <input type="text" id="cedulaCliente" placeholder="Ejemplo: 123.456.789" required>
-        </div>
-        <button type="submit">Generar Contrato</button>
-    </form>
-
-    <div id="contractOutput" class="contract-output" style="display: none;">
-        <h2>Contrato Generado</h2>
-        <div id="contractContent"></div>
-        <button id="printButton" onclick="printContract()">Imprimir Contrato</button>
+        <p>San Miguel Esq. Feliciando Duarte - San Lorenzo</p>
+    </div>
+ 
+    <div class="contact-item">
+       
+        <p>0983 496 378</p>
     </div>
 </div>
 
-<script>
-    const vehicles = [
-        { tipo: "AUTOMOVIL", marca: "CHERY", modelo: "ARRIZO3", año_fab: "2019", color: "BLANCO", chasis_no: "LVVDC21B8LD019001", matricula: "AAGT 983" },
-        { tipo: "AUTOMOVIL", marca: "NISSAN", modelo: "VERSA 2024", año_fab: "2023", color: "AZUL", chasis_no: "3N1CN8AE5ZL118040", matricula: "AASI650" },
-        { tipo: "AUTOMOVIL", marca: "TOYOTA", modelo: "ALLION", año_fab: "2007", color: "PERLA", chasis_no: "NZT2603003525", matricula: "AASR959" },
-        { tipo: "AUTOMOVIL", marca: "NISSAN", modelo: "VERSA 2024", año_fab: "2023", color: "BLANCO", chasis_no: "3N1CN8AE5ZL118050", matricula: "AASI655" },
-        { tipo: "AUTOMOVIL", marca: "TOYOTA", modelo: "VITZ", año_fab: "2012", color: "PLATA", chasis_no: "NSP1302074096", matricula: "AART132" },
-        { tipo: "AUTOMOVIL", marca: "TOYOTA", modelo: "VITZ RS", año_fab: "2008", color: "GRIS", chasis_no: "SCP905086890", matricula: "PROVISORIA AAPA156" },
-        { tipo: "AUTOMOVIL", marca: "KIA", modelo: "SOLUTO EX 1.4 G A/T/2025", año_fab: "2024", color: "NEGRO", chasis_no: "LDJOAA29BS0272268", matricula: "AART 511" },
-        { tipo: "AUTOMOVIL", marca: "KIA", modelo: "SOLUTO EX 1.4 G A/T", año_fab: "2025", color: "AZUL", chasis_no: "LJDOAA29BS0272277", matricula: "AART 514" },
-        { tipo: "AUTOMOVIL", marca: "KIA", modelo: "SOLUTO", año_fab: "2022", color: "GRIS OSCURO", chasis_no: "LJD0AA29AP0180046", matricula: "AALZ721" },
-        { tipo: "AUTOMOVIL", marca: "KIA", modelo: "SOLUTO", año_fab: "2020", color: "BLANCO", chasis_no: "LJDOAA29AM0143047", matricula: "AAGB 713" },
-        { tipo: "AUTOMOVIL", marca: "KIA", modelo: "PICANTO", año_fab: "2025", color: "GRIS OSCURO", chasis_no: "KNAB2514BST272018", matricula: "AASS414" },
-        { tipo: "AUTOMOVIL", marca: "KIA", modelo: "PICANTO", año_fab: "2025", color: "PLATA", chasis_no: "KNAB2514BST272360", matricula: "AASS419" },
-        { tipo: "AUTOMOVIL", marca: "KIA", modelo: "PICANTO", año_fab: "2025", color: "BLANCO", chasis_no: "KNAB2514BST268300", matricula: "PROVISORIA AASS 410" },
-        { tipo: "ST WAGON", marca: "KGM", modelo: "XLV AUT 4X2 DELUXE", año_fab: "2024", color: "AZUL", chasis_no: "KPT26A1VSRP414773", matricula: "AASN539" },
-        { tipo: "AUTOMOVIL", marca: "SSANGYONG", modelo: "KORANDO/2016", año_fab: "2015", color: "BLANCO", chasis_no: "KPTAOA1SSGP234391", matricula: "BZL 122" },
-        { tipo: "AUTOMOVIL", marca: "MITSUBISHI", modelo: "MIRAGE GLS CVT", año_fab: "2024", color: "BLANCO SOLID", chasis_no: "MMBXTA03APH000203", matricula: "INI534" },
-        { tipo: "AUTOMOVIL", marca: "MITSUBISHI", modelo: "MIRAGE GLS CVT 2024", año_fab: "2023", color: "NEGRO MICA", chasis_no: "MMBXTA03APH000225", matricula: "PROVISORIA ING928" },
-        { tipo: "AUTOMOVIL", marca: "MITSUBISHI", modelo: "MIRAGE GLS CVT 2023", año_fab: "2023", color: "BLANCO SOLID", chasis_no: "MMBXTA03APH0000233", matricula: "PROVISORIA INN163" },
-        { tipo: "ST WAGON", marca: "NISSAN", modelo: "KICKS 1.6 SENSE AT", año_fab: "2025", color: "GRIS", chasis_no: "9ADFCAP15ZB202418", matricula: "AARA479" },
-        { tipo: "SUV", marca: "VOLKSWAGEN", modelo: "TCROSS 1.0 TRENDLINE TF AT", año_fab: "2025", color: "AZUL NORWAY", chasis_no: "9BWBH6BF0S4015945", matricula: "AASR372" },
-        { tipo: "AUTOMOVIL", marca: "NISSAN", modelo: "QASHQAI", año_fab: "2024", color: "GRIS GRAFITO", chasis_no: "SJNTAAJ12RA378007", matricula: "AARA479" },
-        { tipo: "AUTOMOVIL", marca: "HYUNDAI", modelo: "GRAN STAREX", año_fab: "2011", color: "GRIS", chasis_no: "KMJWA37J88U344798", matricula: "IMV097" },
-        { tipo: "STATION WAGON", marca: "KIA", modelo: "SPORTAGE", año_fab: "2025", color: "GRIS OSCURO", chasis_no: "KNAPU81DBS7306263", matricula: "AASN442" },
-        { tipo: "CAMIONETA DC", marca: "NISSAN", modelo: "FRONTIER", año_fab: "2025", color: "NEGRO", chasis_no: "3N6CD33B1ZK463414", matricula: "AARU 298" }
-    ];
 
-    const vehicleList = document.getElementById('vehicleList');
-    
-    vehicles.forEach(vehicle => {
-        const listItem = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = "#";
-        link.textContent = `${vehicle.marca} ${vehicle.modelo} (${vehicle.año_fab})`;
-        link.addEventListener('click', () => selectVehicle(vehicle));
-        listItem.appendChild(link);
-        vehicleList.appendChild(listItem);
-    });
-
-    let selectedVehicle = null;
-
-    function selectVehicle(vehicle) {
-        selectedVehicle = vehicle;
-        alert(`Vehículo seleccionado: ${vehicle.marca} ${vehicle.modelo} (${vehicle.año_fab})`);
-    }
-
-    document.getElementById('contractForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const fecha = document.getElementById('fecha').value;
-    const nombre = document.getElementById('nombre').value;
-    const cedula = document.getElementById('cedula').value;
-    const domicilio = document.getElementById('domicilio').value;
-    const ciudad = document.getElementById('ciudad').value;
-    const celular = document.getElementById('celular').value;
-    const monto = document.getElementById('monto').value;
-    const fechaRetiro = document.getElementById('fecha_retiro').value;
-    const horaRetiro = document.getElementById('hora_retiro').value;
-    const fechaDevolucion = document.getElementById('fecha_devolucion').value;
-    const horaDevolucion = document.getElementById('hora_devolucion').value;
-    const kmTarifa = document.getElementById('km_tarifa').value;
-    const diasAlquilados = document.getElementById('dias_alquilados').value;
-    const montoGarantia = document.getElementById('montoGarantia').value;
-    const montoFranquicia = document.getElementById('montoFranquicia').value;
-    const tipoTarifa = document.getElementById('km_tarifa').value;
-    const montoAccidente = document.getElementById('montoAccidente').value;
-    const aseguradora = document.getElementById('aseguradora').value;const nombreCliente = document.getElementById('nombreCliente').value;
-    const cedulaCliente = document.getElementById('cedulaCliente').value;
-
-    if (!selectedVehicle) {
-        alert("Por favor, selecciona un vehículo.");
-        return;
-    }
-
-        const contratoTexto = `
+                <img src="../assets/img/WMLogo.png" alt="WM Logo" class="logo_imagen">
+            </div>
+            <br> <br>
     <p>CONTRATO PRIVADO DE ARRENDAMIENTO DE VEHÍCULO</p>
     <p>En la ciudad de San Lorenzo, ciudad de la República del Paraguay, a los ${fecha} días del mes de Diciembre del año DOS MIL VEINTE Y CUATRO, ENTRE LAS SIGUIENTES PERSONAS:</p>
     <p>Por una parte, el Sr. ${nombre} con Cédula de Identidad Civil N° ${cedula}, domiciliado en ${domicilio}, Cel ${celular}, a denominarse ARRENDATARIO.</p>
@@ -277,29 +411,39 @@
     
     <p>………………………………………………………………...</p>
     <p>………………………………………………………………...</p>
-    <p>WILSON LUIS MEZA FLORES                                     ${nombreCliente}</p>
-    <p>REPRESENTANTE LEGAL                                         CI: ${cedulaCliente}</p>
-    <p>WM GROUP SRL</p>
+    <div class="container_txt">
+        <div class="box red">
+            <div>--------------------</div>
+            <div>WILSON LUIS MEZA FLORES </div>
+            <div>REPRESENTANTE LEGAL</div>
+        </div>
+        <div class="box blue">
+            <div>--------------------</div>
+            <div>${nombreCliente}</div>
+            <div>C.I.: ${cedulaCliente}</div>
+        </div>
+    </div>
     <p>Le corresponde Hoja de Certificación de Firmas Nº ………………- SERIE ////</p>
 `;
-        
-const contractContent = document.getElementById('contractContent');
-    contractContent.innerHTML = contratoTexto;
 
-    const contractOutput = document.getElementById('contractOutput');
-    contractOutput.style.display = 'block';
-});
+            const contractContent = document.getElementById('contractContent');
+            contractContent.innerHTML = contratoTexto;
 
-    function printContract() {
-        const content = document.getElementById('contractContent').innerHTML;
-        const printWindow = window.open('', '', 'height=600,width=800');
-        printWindow.document.write('<html><head><title>Imprimir Contrato</title></head><body>');
-        printWindow.document.write(content);
-        printWindow.document.write
-        printWindow.document.write('</body></html>');
-        printWindow.document.close();
-        printWindow.print();
-    }
-</script>
+            const contractOutput = document.getElementById('contractOutput');
+            contractOutput.style.display = 'block';
+        });
+
+        function printContract() {
+            const content = document.getElementById('contractContent').innerHTML;
+            const printWindow = window.open('', '', 'height=600,width=800');
+            printWindow.document.write('<html><head><title>Imprimir Contrato</title></head><body>');
+            printWindow.document.write(content);
+            printWindow.document.write
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        }
+    </script>
 </body>
+
 </html>
