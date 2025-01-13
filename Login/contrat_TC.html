@@ -84,10 +84,10 @@
 
         .contract-output {
             margin-top: 30px;
-            background-color: #e9ecef;
+            background-color: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: #000 2px solid;
         }
 
         button {
@@ -306,7 +306,7 @@
         <div id="contractOutput" class="contract-output" style="display: none;">
             <h2>Contrato Generado</h2>
             <div id="contractContent"></div>
-            <button id="printButton" onclick="printContract()">Imprimir Contrato</button>
+            
         </div>
     </div>
 
@@ -465,16 +465,7 @@
             contractOutput.style.display = 'block';
         });
 
-        function printContract() {
-            const content = document.getElementById('contractContent').innerHTML;
-            const printWindow = window.open('', '', 'height=600,width=800');
-            printWindow.document.write('<html><head><title>Imprimir Contrato</title></head><body>');
-            printWindow.document.write(content);
-            printWindow.document.write
-            printWindow.document.write('</body></html>');
-            printWindow.document.close();
-            printWindow.print();
-        }
+      
     </script>
 
     <script>

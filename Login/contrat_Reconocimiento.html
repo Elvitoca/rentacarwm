@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <title>Contrato con Reconocimiento</title>
     <style>
         body {
@@ -280,12 +281,13 @@
                 <input type="text" id="cedulaCliente" placeholder="Ejemplo: 123.456.789" required>
             </div>
             <button type="submit">Generar Contrato</button>
+            <button id="generateImageButton">Generar Contrato como Imagen</button>
         </form>
 
         <div id="contractOutput" class="contract-output" style="display: none;">
             <h2>Contrato Generado</h2>
             <div id="contractContent"></div>
-            <button id="printButton" onclick="printContract()">Imprimir Contrato</button>
+            
         </div>
     </div>
 
@@ -433,16 +435,21 @@
             contractOutput.style.display = 'block';
         });
 
-        function printContract() {
-            const content = document.getElementById('contractContent').innerHTML;
-            const printWindow = window.open('', '', 'height=600,width=800');
-            printWindow.document.write('<html><head><title>Imprimir Contrato</title></head><body>');
-            printWindow.document.write(content);
-            printWindow.document.write
-            printWindow.document.write('</body></html>');
-            printWindow.document.close();
-            printWindow.print();
-        }
+       
+    </script>
+    <!--Generar Img-->
+    <script>
+        document.getElementById('generateImageButton').addEventListener('click', function() {
+    const nombreCliente = document.getElementById('nombreCliente').value; // Obtén el nombre del cliente
+    const contratoElement = document.getElementById('contractContent');
+
+    html2canvas(contratoElement).then(function(canvas) {
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = `${nombreCliente}_contrato.png`; // Nombre del archivo
+        link.click(); // Simula el clic para descargar
+    });
+});
     </script>
 </body>
 

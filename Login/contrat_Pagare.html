@@ -228,6 +228,7 @@
             /* Tamaño de fuente */
             line-height: 1.5;
             /* Espaciado entre líneas */
+        }
     </style>
 </head>
 
@@ -335,7 +336,7 @@
         <div id="contractOutput" class="contract-output" style="display: none;">
             <h2>Contrato Generado</h2>
             <div id="contractContent"></div>
-            <button id="printButton" onclick="printContract()">Imprimir Contrato</button>
+            
         </div>
         <!--Formulario Pagaré-->
         <section id="pagareSection">
@@ -404,8 +405,7 @@
         </div>
         <button type="submit">Generar Pagaré</button>
     </form>
-    <button type="button" id="imprimirPagare" class="hidden">Imprimir Pagaré</button>
-    <button type="button" id="generarImagen" class="hidden">Generar Imagen</button>
+
     <div id="pagareOutput" style="display:none; margin-top:20px;"></div>
 </section>
     </div>
@@ -553,17 +553,6 @@
             const contractOutput = document.getElementById('contractOutput');
             contractOutput.style.display = 'block';
         });
-
-        function printContract() {
-            const content = document.getElementById('contractContent').innerHTML;
-            const printWindow = window.open('', '', 'height=600,width=800');
-            printWindow.document.write('<html><head><title>Imprimir Contrato</title></head><body>');
-            printWindow.document.write(content);
-            printWindow.document.write
-            printWindow.document.write('</body></html>');
-            printWindow.document.close();
-            printWindow.print();
-        }
     </script>
     <!--Generara Pagaré-->
     <script>
@@ -620,21 +609,7 @@ function generatePagare() {
     const pagareOutput = document.getElementById('pagareOutput');
     pagareOutput.innerHTML = pagareTexto;
     pagareOutput.style.display = 'block';
-
-    // Mostrar los botones
-    document.getElementById('imprimirPagare').classList.remove('hidden');
-    document.getElementById('generarImagen').classList.remove('hidden');
 }
-
-document.getElementById('generarImagen').addEventListener('click', function() {
-    const pagareOutput = document.getElementById('pagareOutput');
-    html2canvas(pagareOutput).then(function(canvas) {
-        const link = document.createElement('a');
-        link.download = 'pagare.png'; // Nombre del archivo
-        link.href = canvas.toDataURL('image/png');
-        link.click();
-    });
-});
     </script>
 </body>
 
