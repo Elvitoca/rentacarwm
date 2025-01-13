@@ -281,7 +281,7 @@
                 <input type="text" id="cedulaCliente" placeholder="Ejemplo: 123.456.789" required>
             </div>
             <button type="submit">Generar Contrato</button>
-            <button id="generateImageButton">Generar Contrato como Imagen</button>
+         
         </form>
 
         <div id="contractOutput" class="contract-output" style="display: none;">
@@ -438,19 +438,7 @@
        
     </script>
     <!--Generar Img-->
-    <script>
-        document.getElementById('generateImageButton').addEventListener('click', function() {
-    const nombreCliente = document.getElementById('nombreCliente').value; // Obtén el nombre del cliente
-    const contratoElement = document.getElementById('contractContent');
-
-    html2canvas(contratoElement).then(function(canvas) {
-        const link = document.createElement('a');
-        link.href = canvas.toDataURL('image/png');
-        link.download = `${nombreCliente}_contrato.png`; // Nombre del archivo
-        link.click(); // Simula el clic para descargar
-    });
-});
-    </script>
+ 
 </body>
 
 </html>
